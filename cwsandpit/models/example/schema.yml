@@ -21,41 +21,50 @@ models:
             - unique
             - not_null
 
-    - name: stg_fct_written_transactions
-      description: "Staging for Written Transactions"
+      - name: dim_claims
+      description: "Claim Dimension"
+      columns:
+        - name: claim_key
+          description: "The primary key for this table"
+          tests: 
+            - unique
+            - not_null
 
-    - name: dim_date
-      description: "Date Dimension"
+      - name: dim_financial_categories
+      description: "Financial Category Dimension"
+      columns:
+        - name: financial_category_key
+          description: "The primary key for this table"
+          tests: 
+            - unique
+            - not_null
 
-    - name: stg_policies
-      description: "Policy Stage"
+      - name: dim_loss_events
+      description: "Loss Events Dimension"
+      columns:
+        - name: loss_event_key
+          description: "The primary key for this table"
+          tests: 
+            - unique
+            - not_null
 
-    - name: stg_policy_settlement_sched_deduction_full
-      description: "Sched Deductions Combined"
-    
-    - name: stg_policy_settlement_sched_deduction_share
-      description: "Deduction Line Shares"
+      - name: dim_parties
+      description: "Party Dimension"
+      columns:
+        - name: party_key
+          description: "The primary key for this table"
+          tests: 
+            - unique
+            - not_null
 
-    - name: stg_policy_settlement_sched_full
-      description: "Schedule Premium Combined"
-
-    - name: stg_policy_settlement_sched_deduction
-      description: "Premium Line Share"
-
-    - name: stg_policy_settlement_sched_share
-      description: "Deductions Schedule"
-
-    - name: stg_policy_settlement_sched
-      description: "Policy Premium Schedule"
-
-    - name: stg_policy_settlement_union
-      description: "Union of Premium & Deduction"
-
-    - name: stg_policylines
-      description: "Lines"
-
-    - name: stg_policyprem
-      description: "Policy Premium"
+      - name: dim_transaction_events
+      description: "Transactional Events Dimension"
+      columns:
+        - name: transaction_event_key
+          description: "The primary key for this table"
+          tests: 
+            - unique
+            - not_null
 
     - name: dim_parties
       description: "Parties Dimension"
