@@ -1,0 +1,13 @@
+﻿EVENT_SOURCE,LOOKUP_VALUE,TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
+written,RTP,Written,Other
+written,RTT,Written,Other
+written,BDX,Written,Other
+written,NCB,Written,Other
+written,PAY,Written,Other
+written,ADJ,Written,Other
+written,PA,Written,Reinstatement
+written,RPP,Written,Reinstatement
+written,AP,Written,Other
+written,PM,Written,Other
+written,COM,Written,Other
+written,SWP,Written,Swing

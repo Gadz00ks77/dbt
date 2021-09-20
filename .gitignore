@@ -1,0 +1,6 @@
+venv
+arch.snowflake.user.creds
+trash.py
+.vscode
+venv/bin/dbt
+venv/bin

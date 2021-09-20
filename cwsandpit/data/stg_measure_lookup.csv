@@ -1,0 +1,223 @@
+﻿SOURCE,CATEGORY,SUB_CATEGORY,PARENT_CATEGORY,IS_ADDITION,MEASURE
+written,Deduction,Administration Allowance,Deduction,N,Other Deduction
+written,Deduction,Commission,Deduction,N,Written Commission
+written,Deduction,Coverholder Commission,Deduction,N,Other Deduction
+written,Deduction,Federal Excise Tax,Deduction,N,Other Deduction
+written,Deduction,Fees & Expenses,Deduction,N,Other Deduction
+written,Deduction,Fire Brigade Charges,Deduction,N,Other Deduction
+written,Deduction,Greek Tax - 12.4%,Deduction,N,Other Deduction
+written,Deduction,Irish Levy,Deduction,N,Other Deduction
+written,Deduction,Italian Solidarity Fund - 1%,Deduction,N,Other Deduction
+written,Deduction,Italy Pt & Pc - 22.25%,Deduction,N,Other Deduction
+written,Deduction,Lead Office Survey Fees,Deduction,N,Other Deduction
+written,Deduction,Management Expenses,Deduction,N,Other Deduction
+written,Deduction,Other Deduction,Deduction,N,Other Deduction
+written,Deduction,Other Fees,Deduction,N,Other Deduction
+written,Deduction,Peruvian Withholding Tax,Deduction,N,Other Deduction
+written,Deduction,Premium Taxes,Deduction,N,Other Deduction
+written,Deduction,Profit Commission,Deduction,N,Other Deduction
+written,Deduction,Reinsurance Commission,Deduction,N,Other Deduction
+written,Deduction,Reinsurance Overriding Commission,Deduction,N,Other Deduction
+written,Deduction,Reinsurance Profit Commission,Deduction,N,Other Deduction
+written,Deduction,Spanish Tax Both - 6.3%,Deduction,N,Other Deduction
+written,Premium,Premium,Premium,N,Written Premium
+written,Deduction,Brokerage,Deduction,N,Written Brokerage
+written,Deduction,Brokerage (Flat),Deduction,N,Written Brokerage
+written,Deduction,Brokerage (Profitability),Deduction,N,Written Brokerage
+written,IPT,IPT Algeria,Deduction,N,Written IPT
+written,IPT,IPT Antigua and Barbuda,Deduction,N,Written IPT
+written,IPT,IPT Argentina,Deduction,N,Written IPT
+written,IPT,IPT Australia,Deduction,N,Written IPT
+written,IPT,IPT Austria,Deduction,N,Written IPT
+written,IPT,IPT Azerbaijan,Deduction,N,Written IPT
+written,IPT,IPT Bahamas,Deduction,N,Written IPT
+written,IPT,IPT Bahrain,Deduction,N,Written IPT
+written,IPT,IPT Barbados,Deduction,N,Written IPT
+written,IPT,IPT Belgium,Deduction,N,Written IPT
+written,IPT,IPT Bermuda,Deduction,N,Written IPT
+written,IPT,IPT Bolivia,Deduction,N,Written IPT
+written,IPT,IPT Brazil,Deduction,N,Written IPT
+written,IPT,IPT Bulgaria,Deduction,N,Written IPT
+written,IPT,IPT Cambodia,Deduction,N,Written IPT
+written,IPT,IPT Canada,Deduction,N,Written IPT
+written,IPT,IPT Canada NewFoundland,Deduction,N,Written IPT
+written,IPT,IPT Canada Ontario,Deduction,N,Written IPT
+written,IPT,IPT Canada Quebec,Deduction,N,Written IPT
+written,IPT,IPT Cayman Islands,Deduction,N,Written IPT
+written,IPT,IPT Chile,Deduction,N,Written IPT
+written,IPT,IPT China,Deduction,N,Written IPT
+written,IPT,IPT Colombia,Deduction,N,Written IPT
+written,IPT,IPT Cyprus,Deduction,N,Written IPT
+written,IPT,IPT Denmark,Deduction,N,Written IPT
+written,IPT,IPT Dominica,Deduction,N,Written IPT
+written,IPT,IPT Dominican Republic,Deduction,N,Written IPT
+written,IPT,IPT Ecuador,Deduction,N,Written IPT
+written,IPT,IPT Fiji,Deduction,N,Written IPT
+written,IPT,IPT Finland,Deduction,N,Written IPT
+written,IPT,IPT France,Deduction,N,Written IPT
+written,IPT,IPT French Polynesia,Deduction,N,Written IPT
+written,IPT,IPT Germany,Deduction,N,Written IPT
+written,IPT,IPT Greece,Deduction,N,Written IPT
+written,IPT,IPT Guatemala,Deduction,N,Written IPT
+written,IPT,IPT Guinea,Deduction,N,Written IPT
+written,IPT,IPT Haiti,Deduction,N,Written IPT
+written,IPT,IPT Hungary,Deduction,N,Written IPT
+written,IPT,IPT Hungary Stamp Duty,Deduction,N,Written IPT
+written,IPT,IPT Indonesia,Deduction,N,Written IPT
+written,IPT,IPT Ireland,Deduction,N,Written IPT
+written,IPT,IPT Italy,Deduction,N,Written IPT
+written,IPT,IPT Kazakhstan,Deduction,N,Written IPT
+written,IPT,"IPT Korea, Republic of",Deduction,N,Written IPT
+written,IPT,IPT Kuwait,Deduction,N,Written IPT
+written,IPT,IPT Lebanon,Deduction,N,Written IPT
+written,IPT,IPT Liechtenstein,Deduction,N,Written IPT
+written,IPT,IPT Luxembourg,Deduction,N,Written IPT
+written,IPT,IPT Malaysia,Deduction,N,Written IPT
+written,IPT,IPT Malta,Deduction,N,Written IPT
+written,IPT,IPT Mauritania,Deduction,N,Written IPT
+written,IPT,IPT Mexico,Deduction,N,Written IPT
+written,IPT,IPT Monaco,Deduction,N,Written IPT
+written,IPT,IPT Morocco,Deduction,N,Written IPT
+written,IPT,IPT Namibia,Deduction,N,Written IPT
+written,IPT,IPT Netherlands,Deduction,N,Written IPT
+written,IPT,IPT New Zealand,Deduction,N,Written IPT
+written,IPT,IPT Nigeria,Deduction,N,Written IPT
+written,IPT,IPT Norway,Deduction,N,Written IPT
+written,IPT,IPT Panama,Deduction,N,Written IPT
+written,IPT,IPT Papua New Guinea,Deduction,N,Written IPT
+written,IPT,IPT Peru,Deduction,N,Written IPT
+written,IPT,IPT Portugal,Deduction,N,Written IPT
+written,IPT,IPT Portugal Parafiscal,Deduction,N,Written IPT
+written,IPT,IPT Romania,Deduction,N,Written IPT
+written,IPT,IPT Russian Federation,Deduction,N,Written IPT
+written,IPT,IPT Saint Lucia,Deduction,N,Written IPT
+written,IPT,IPT Saudi Arabia,Deduction,N,Written IPT
+written,IPT,IPT Serbia,Deduction,N,Written IPT
+written,IPT,IPT Singapore,Deduction,N,Written IPT
+written,IPT,IPT Slovakia,Deduction,N,Written IPT
+written,IPT,IPT Slovenia,Deduction,N,Written IPT
+written,IPT,IPT South Africa Income Tax,Deduction,N,Written IPT
+written,IPT,IPT Spain,Deduction,N,Written IPT
+written,IPT,IPT Switzerland,Deduction,N,Written IPT
+written,IPT,"IPT Taiwan, Province of China",Deduction,N,Written IPT
+written,IPT,IPT Thailand,Deduction,N,Written IPT
+written,IPT,IPT Trinidad and Tobago,Deduction,N,Written IPT
+written,IPT,IPT Turkey,Deduction,N,Written IPT
+written,IPT,IPT UK,Deduction,N,Written IPT
+written,IPT,IPT Ukraine,Deduction,N,Written IPT
+written,IPT,IPT United Arab Emirates,Deduction,N,Written IPT
+written,IPT,IPT United States,Deduction,N,Written IPT
+written,IPT,IPT Uruguay,Deduction,N,Written IPT
+written,IPT,IPT Venezuela,Deduction,N,Written IPT
+written,IPT,IPT Vietnam,Deduction,N,Written IPT
+written,IPT,IPT Xchanging (*UNKNOWN*),Deduction,N,Written IPT
+written,Deduction,Brokerage,Deduction,Y,Written Brokerage (Additional)
+written,Deduction,Brokerage (Flat),Deduction,Y,Written Brokerage (Additional)
+written,Deduction,Brokerage (Profitability),Deduction,Y,Written Brokerage (Additional)
+written,IPT,IPT Algeria,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Antigua and Barbuda,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Argentina,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Australia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Austria,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Azerbaijan,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Bahamas,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Bahrain,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Barbados,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Belgium,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Bermuda,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Bolivia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Brazil,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Bulgaria,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Cambodia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Canada,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Canada NewFoundland,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Canada Ontario,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Canada Quebec,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Cayman Islands,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Chile,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT China,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Colombia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Cyprus,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Denmark,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Dominica,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Dominican Republic,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Ecuador,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Fiji,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Finland,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT France,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT French Polynesia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Germany,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Greece,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Guatemala,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Guinea,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Haiti,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Hungary,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Hungary Stamp Duty,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Indonesia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Ireland,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Italy,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Kazakhstan,Deduction,Y,Written IPT (Additional)
+written,IPT,"IPT Korea, Republic of",Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Kuwait,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Lebanon,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Liechtenstein,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Luxembourg,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Malaysia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Malta,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Mauritania,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Mexico,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Monaco,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Morocco,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Namibia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Netherlands,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT New Zealand,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Nigeria,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Norway,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Panama,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Papua New Guinea,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Peru,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Portugal,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Portugal Parafiscal,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Romania,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Russian Federation,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Saint Lucia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Saudi Arabia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Serbia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Singapore,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Slovakia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Slovenia,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT South Africa Income Tax,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Spain,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Switzerland,Deduction,Y,Written IPT (Additional)
+written,IPT,"IPT Taiwan, Province of China",Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Thailand,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Trinidad and Tobago,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Turkey,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT UK,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Ukraine,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT United Arab Emirates,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT United States,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Uruguay,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Venezuela,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Vietnam,Deduction,Y,Written IPT (Additional)
+written,IPT,IPT Xchanging (*UNKNOWN*),Deduction,Y,Written IPT (Additional)
+written,Deduction,Administration Allowance,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Commission,Deduction,Y,Written Commission (Additional)
+written,Deduction,Coverholder Commission,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Federal Excise Tax,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Fees & Expenses,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Fire Brigade Charges,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Greek Tax - 12.4%,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Irish Levy,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Italian Solidarity Fund - 1%,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Italy Pt & Pc - 22.25%,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Lead Office Survey Fees,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Management Expenses,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Other Deduction,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Other Fees,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Peruvian Withholding Tax,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Premium Taxes,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Profit Commission,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Reinsurance Commission,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Reinsurance Overriding Commission,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Reinsurance Profit Commission,Deduction,Y,Other Deduction (Additional)
