@@ -21,7 +21,7 @@ models:
             - unique
             - not_null
 
-      - name: dim_claims
+    - name: dim_claims
       description: "Claim Dimension"
       columns:
         - name: claim_key
@@ -30,7 +30,7 @@ models:
             - unique
             - not_null
 
-      - name: dim_financial_categories
+    - name: dim_financial_categories
       description: "Financial Category Dimension"
       columns:
         - name: financial_category_key
@@ -39,7 +39,7 @@ models:
             - unique
             - not_null
 
-      - name: dim_loss_events
+    - name: dim_loss_events
       description: "Loss Events Dimension"
       columns:
         - name: loss_event_key
@@ -48,16 +48,7 @@ models:
             - unique
             - not_null
 
-      - name: dim_parties
-      description: "Party Dimension"
-      columns:
-        - name: party_key
-          description: "The primary key for this table"
-          tests: 
-            - unique
-            - not_null
-
-      - name: dim_transaction_events
+    - name: dim_transaction_events
       description: "Transactional Events Dimension"
       columns:
         - name: transaction_event_key
