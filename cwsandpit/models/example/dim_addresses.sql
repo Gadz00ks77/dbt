@@ -65,6 +65,9 @@ v.PostCode as Postal_Code
 from 
 cte_valids v
 
+
+--adding some "Not Available" and "Unknown" values
+
 union 
 
 select 

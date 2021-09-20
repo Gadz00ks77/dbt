@@ -55,6 +55,8 @@ v.losstitle as Claim_Title
 from 
 cte_valids v
 
+--adding some "Not Available" and "Unknown" values
+
 union
 
 select 

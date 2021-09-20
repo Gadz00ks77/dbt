@@ -1,5 +1,10 @@
 
 -- Create a "as at day" view of the address table
+-- THESE STAGE QUERIES (UNLESS THE REF SYNTAX INDICATES OTHERWISE) ARE ALL USING THE 
+-- SNAPSHOT CURATED TABLES IN DU PROD. e.g. for this one;
+-- "DU_PROD"."CURATED_WNS_ECLIPSE_AND_PREQUEL_EXPORT"."ADDR_LATEST_CURATED_WNS_ECLIPSE_AND_PREQUEL_EXPORT"
+-- I shifted the ones I needed over to the Arch db on Dedicted Snowflake hence the different name
+
 
 
 {{ config(materialized='table') }}
