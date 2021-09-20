@@ -1,4 +1,7 @@
 
+
+--SOURCE: CURATED SNAPSHOT TABLE
+
 with cte_date_all as
 (
   select 

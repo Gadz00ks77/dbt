@@ -2,7 +2,9 @@
 -- I did this because the loss dates on LossRegister in the Eclipse data were missing
 -- This can therefore be replaced with that table / deprecated later.
 
-{{ config(materialized='table') }}
+
+--SOURCE: CURATED SNAPSHOT TABLE
+
 with cte_date_all as
 (
   select 

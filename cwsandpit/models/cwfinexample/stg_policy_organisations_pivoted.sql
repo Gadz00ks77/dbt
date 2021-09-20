@@ -1,7 +1,5 @@
 
 
-{{ config(materialized='table') }}
-
 with cte_source as
 (
 select actual_date,policyid,policyorgtype,orgid

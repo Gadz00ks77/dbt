@@ -1,2 +1,4 @@
+--SOURCE: A COPY OF DIM_DATES FROM REPORTING_COMMON
+
 select * 
 from dim_dates

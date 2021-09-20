@@ -1,6 +1,8 @@
 -- Create a "as at day" view of the ECLIPSE Claims Event table
 
-{{ config(materialized='table') }}
+
+--SOURCE: CURATED SNAPSHOT TABLE
+
 with cte_date_all as
 (
   select 

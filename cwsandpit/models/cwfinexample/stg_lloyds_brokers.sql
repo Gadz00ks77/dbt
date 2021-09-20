@@ -2,6 +2,8 @@
 -- NOTE THE SENSITIVITY TO THE DELDATE CONDITION. This is a quick / naive solution, but resolved some fanning.
 
 
+--SOURCE: CURATED SNAPSHOT TABLE
+
 with cte_date_all as
 (
   select 

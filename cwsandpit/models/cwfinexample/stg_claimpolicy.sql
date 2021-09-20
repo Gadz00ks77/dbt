@@ -1,6 +1,8 @@
 -- Create a "as at day" view of the ECLIPSE Claim Policy table
 
-{{ config(materialized='table') }}
+
+--SOURCE: CURATED SNAPSHOT TABLE
+
 with cte_date_all as
 (
   select 

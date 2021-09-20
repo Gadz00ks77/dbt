@@ -1,3 +1,6 @@
+---SOURCE: A COPY OF CURRENCY_DIM FROM REPORTING_COMMON
+
+
 select *
 from currency_dim
 

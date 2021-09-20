@@ -1,6 +1,9 @@
 
 --Organisations Staging on a Day
 
+
+--SOURCE: CURATED SNAPSHOT TABLE
+
 {{ config(materialized='table') }}
 with cte_date_all as
 (
