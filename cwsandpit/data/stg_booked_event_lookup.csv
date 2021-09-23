@@ -1,0 +1,13 @@
+﻿EVENT_SOURCE,LOOKUP_VALUE,TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
+non-bureau booked,RTP,Booked,Other
+non-bureau booked,RTT,Booked,Other
+non-bureau booked,BDX,Booked,Other
+non-bureau booked,NCB,Booked,Other
+non-bureau booked,PAY,Booked,Other
+non-bureau booked,ADJ,Booked,Other
+non-bureau booked,PA,Booked,Reinstatement
+non-bureau booked,RPP,Booked,Reinstatement
+non-bureau booked,AP,Booked,Other
+non-bureau booked,PM,Booked,Other
+non-bureau booked,COM,Booked,Other
+non-bureau booked,SWP,Booked,Swing

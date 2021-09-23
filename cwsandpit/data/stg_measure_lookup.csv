@@ -1,26 +1,26 @@
 ﻿SOURCE,CATEGORY,SUB_CATEGORY,PARENT_CATEGORY,IS_ADDITION,MEASURE
-written,Deduction,Administration Allowance,Deduction,N,Other Deduction
+written,Deduction,Administration Allowance,Deduction,N,Written Other Deduction
 written,Deduction,Commission,Deduction,N,Written Commission
-written,Deduction,Coverholder Commission,Deduction,N,Other Deduction
-written,Deduction,Federal Excise Tax,Deduction,N,Other Deduction
-written,Deduction,Fees & Expenses,Deduction,N,Other Deduction
-written,Deduction,Fire Brigade Charges,Deduction,N,Other Deduction
-written,Deduction,Greek Tax - 12.4%,Deduction,N,Other Deduction
-written,Deduction,Irish Levy,Deduction,N,Other Deduction
-written,Deduction,Italian Solidarity Fund - 1%,Deduction,N,Other Deduction
-written,Deduction,Italy Pt & Pc - 22.25%,Deduction,N,Other Deduction
-written,Deduction,Lead Office Survey Fees,Deduction,N,Other Deduction
-written,Deduction,Management Expenses,Deduction,N,Other Deduction
-written,Deduction,Other Deduction,Deduction,N,Other Deduction
-written,Deduction,Other Fees,Deduction,N,Other Deduction
-written,Deduction,Peruvian Withholding Tax,Deduction,N,Other Deduction
-written,Deduction,Premium Taxes,Deduction,N,Other Deduction
-written,Deduction,Profit Commission,Deduction,N,Other Deduction
-written,Deduction,Reinsurance Commission,Deduction,N,Other Deduction
-written,Deduction,Reinsurance Overriding Commission,Deduction,N,Other Deduction
-written,Deduction,Reinsurance Profit Commission,Deduction,N,Other Deduction
-written,Deduction,Spanish Tax Both - 6.3%,Deduction,N,Other Deduction
-written,Premium,Premium,Premium,N,Written Premium
+written,Deduction,Coverholder Commission,Deduction,N,Written Other Deduction
+written,Deduction,Federal Excise Tax,Deduction,N,Written Other Deduction
+written,Deduction,Fees & Expenses,Deduction,N,Written Other Deduction
+written,Deduction,Fire Brigade Charges,Deduction,N,Written Other Deduction
+written,Deduction,Greek Tax - 12.4%,Deduction,N,Written Other Deduction
+written,Deduction,Irish Levy,Deduction,N,Written Other Deduction
+written,Deduction,Italian Solidarity Fund - 1%,Deduction,N,Written Other Deduction
+written,Deduction,Italy Pt & Pc - 22.25%,Deduction,N,Written Other Deduction
+written,Deduction,Lead Office Survey Fees,Deduction,N,Written Other Deduction
+written,Deduction,Management Expenses,Deduction,N,Written Other Deduction
+written,Deduction,Other Deduction,Deduction,N,Written Other Deduction
+written,Deduction,Other Fees,Deduction,N,Written Other Deduction
+written,Deduction,Peruvian Withholding Tax,Deduction,N,Written Other Deduction
+written,Deduction,Premium Taxes,Deduction,N,Written Other Deduction
+written,Deduction,Profit Commission,Deduction,N,Written Other Deduction
+written,Deduction,Reinsurance Commission,Deduction,N,Written Other Deduction
+written,Deduction,Reinsurance Overriding Commission,Deduction,N,Written Other Deduction
+written,Deduction,Reinsurance Profit Commission,Deduction,N,Written Other Deduction
+written,Deduction,Spanish Tax Both - 6.3%,Deduction,N,Written Other Deduction
+written,Premium,Premium,Premium,N,Gross Written Premium
 written,Deduction,Brokerage,Deduction,N,Written Brokerage
 written,Deduction,Brokerage (Flat),Deduction,N,Written Brokerage
 written,Deduction,Brokerage (Profitability),Deduction,N,Written Brokerage
@@ -201,23 +201,245 @@ written,IPT,IPT Uruguay,Deduction,Y,Written IPT (Additional)
 written,IPT,IPT Venezuela,Deduction,Y,Written IPT (Additional)
 written,IPT,IPT Vietnam,Deduction,Y,Written IPT (Additional)
 written,IPT,IPT Xchanging (*UNKNOWN*),Deduction,Y,Written IPT (Additional)
-written,Deduction,Administration Allowance,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Administration Allowance,Deduction,Y,Written Other Deduction (Additional)
 written,Deduction,Commission,Deduction,Y,Written Commission (Additional)
-written,Deduction,Coverholder Commission,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Federal Excise Tax,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Fees & Expenses,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Fire Brigade Charges,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Greek Tax - 12.4%,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Irish Levy,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Italian Solidarity Fund - 1%,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Italy Pt & Pc - 22.25%,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Lead Office Survey Fees,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Management Expenses,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Other Deduction,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Other Fees,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Peruvian Withholding Tax,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Premium Taxes,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Profit Commission,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Reinsurance Commission,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Reinsurance Overriding Commission,Deduction,Y,Other Deduction (Additional)
-written,Deduction,Reinsurance Profit Commission,Deduction,Y,Other Deduction (Additional)
+written,Deduction,Coverholder Commission,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Federal Excise Tax,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Fees & Expenses,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Fire Brigade Charges,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Greek Tax - 12.4%,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Irish Levy,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Italian Solidarity Fund - 1%,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Italy Pt & Pc - 22.25%,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Lead Office Survey Fees,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Management Expenses,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Other Deduction,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Other Fees,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Peruvian Withholding Tax,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Premium Taxes,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Profit Commission,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Reinsurance Commission,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Reinsurance Overriding Commission,Deduction,Y,Written Other Deduction (Additional)
+written,Deduction,Reinsurance Profit Commission,Deduction,Y,Written Other Deduction (Additional)
+non-bureau booked,Deduction,Administration Allowance,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Commission,Deduction,N,Booked Commission
+non-bureau booked,Deduction,Coverholder Commission,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Federal Excise Tax,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Fees & Expenses,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Fire Brigade Charges,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Greek Tax - 12.4%,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Irish Levy,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Italian Solidarity Fund - 1%,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Italy Pt & Pc - 22.25%,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Lead Office Survey Fees,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Management Expenses,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Other Deduction,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Other Fees,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Peruvian Withholding Tax,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Premium Taxes,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Profit Commission,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Reinsurance Commission,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Reinsurance Overriding Commission,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Reinsurance Profit Commission,Deduction,N,Booked Other Deduction
+non-bureau booked,Deduction,Spanish Tax Both - 6.3%,Deduction,N,Booked Other Deduction
+non-bureau booked,Premium,Premium,Premium,N,Gross Booked Premium
+non-bureau booked,Deduction,Brokerage,Deduction,N,Booked Brokerage
+non-bureau booked,Deduction,Brokerage (Flat),Deduction,N,Booked Brokerage
+non-bureau booked,Deduction,Brokerage (Profitability),Deduction,N,Booked Brokerage
+non-bureau booked,IPT,IPT Algeria,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Antigua and Barbuda,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Argentina,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Australia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Austria,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Azerbaijan,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Bahamas,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Bahrain,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Barbados,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Belgium,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Bermuda,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Bolivia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Brazil,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Bulgaria,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Cambodia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Canada,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Canada NewFoundland,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Canada Ontario,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Canada Quebec,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Cayman Islands,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Chile,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT China,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Colombia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Cyprus,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Denmark,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Dominica,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Dominican Republic,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Ecuador,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Fiji,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Finland,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT France,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT French Polynesia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Germany,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Greece,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Guatemala,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Guinea,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Haiti,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Hungary,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Hungary Stamp Duty,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Indonesia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Ireland,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Italy,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Kazakhstan,Deduction,N,Booked IPT
+non-bureau booked,IPT,"IPT Korea, Republic of",Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Kuwait,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Lebanon,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Liechtenstein,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Luxembourg,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Malaysia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Malta,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Mauritania,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Mexico,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Monaco,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Morocco,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Namibia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Netherlands,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT New Zealand,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Nigeria,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Norway,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Panama,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Papua New Guinea,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Peru,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Portugal,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Portugal Parafiscal,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Romania,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Russian Federation,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Saint Lucia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Saudi Arabia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Serbia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Singapore,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Slovakia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Slovenia,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT South Africa Income Tax,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Spain,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Switzerland,Deduction,N,Booked IPT
+non-bureau booked,IPT,"IPT Taiwan, Province of China",Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Thailand,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Trinidad and Tobago,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Turkey,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT UK,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Ukraine,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT United Arab Emirates,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT United States,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Uruguay,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Venezuela,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Vietnam,Deduction,N,Booked IPT
+non-bureau booked,IPT,IPT Xchanging (*UNKNOWN*),Deduction,N,Booked IPT
+non-bureau booked,Deduction,Brokerage,Deduction,Y,Booked Brokerage (Additional)
+non-bureau booked,Deduction,Brokerage (Flat),Deduction,Y,Booked Brokerage (Additional)
+non-bureau booked,Deduction,Brokerage (Profitability),Deduction,Y,Booked Brokerage (Additional)
+non-bureau booked,IPT,IPT Algeria,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Antigua and Barbuda,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Argentina,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Australia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Austria,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Azerbaijan,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Bahamas,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Bahrain,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Barbados,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Belgium,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Bermuda,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Bolivia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Brazil,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Bulgaria,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Cambodia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Canada,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Canada NewFoundland,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Canada Ontario,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Canada Quebec,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Cayman Islands,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Chile,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT China,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Colombia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Cyprus,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Denmark,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Dominica,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Dominican Republic,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Ecuador,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Fiji,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Finland,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT France,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT French Polynesia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Germany,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Greece,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Guatemala,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Guinea,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Haiti,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Hungary,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Hungary Stamp Duty,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Indonesia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Ireland,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Italy,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Kazakhstan,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,"IPT Korea, Republic of",Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Kuwait,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Lebanon,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Liechtenstein,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Luxembourg,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Malaysia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Malta,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Mauritania,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Mexico,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Monaco,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Morocco,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Namibia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Netherlands,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT New Zealand,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Nigeria,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Norway,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Panama,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Papua New Guinea,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Peru,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Portugal,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Portugal Parafiscal,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Romania,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Russian Federation,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Saint Lucia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Saudi Arabia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Serbia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Singapore,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Slovakia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Slovenia,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT South Africa Income Tax,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Spain,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Switzerland,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,"IPT Taiwan, Province of China",Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Thailand,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Trinidad and Tobago,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Turkey,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT UK,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Ukraine,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT United Arab Emirates,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT United States,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Uruguay,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Venezuela,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Vietnam,Deduction,Y,Booked IPT (Additional)
+non-bureau booked,IPT,IPT Xchanging (*UNKNOWN*),Deduction,Y,Booked IPT (Additional)
+non-bureau booked,Deduction,Administration Allowance,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Commission,Deduction,Y,Booked Commission (Additional)
+non-bureau booked,Deduction,Coverholder Commission,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Federal Excise Tax,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Fees & Expenses,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Fire Brigade Charges,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Greek Tax - 12.4%,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Irish Levy,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Italian Solidarity Fund - 1%,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Italy Pt & Pc - 22.25%,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Lead Office Survey Fees,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Management Expenses,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Other Deduction,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Other Fees,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Peruvian Withholding Tax,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Premium Taxes,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Profit Commission,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Reinsurance Commission,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Reinsurance Overriding Commission,Deduction,Y,Booked Other Deduction (Additional)
+non-bureau booked,Deduction,Reinsurance Profit Commission,Deduction,Y,Booked Other Deduction (Additional)

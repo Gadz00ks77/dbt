@@ -1,4 +1,4 @@
-
+-- Create a "as at day" view of the Ledger Trans Table
 --SOURCE: CURATED SNAPSHOT TABLE
 
 with cte_date_all as
@@ -10,22 +10,22 @@ with cte_date_all as
 ),
 eff_range_source as(
     select 
-    p.*
+    p.ledgertransid,
+    p.contraind,
+    p.upddate,
+    p.origamt,
+    p.ledgeramt,
+    p.ledgeraccountid,
+    p.fintransdetailid,
+    p.ledgertranstype
     ,case when actual_date >= valid_from and actual_date <= valid_to then 1 else 0 end as in_date
     ,actual_date
     from 
-    settlementschedulesharededuction p
+    ledgertrans p
     cross join cte_date_all d
 
 )
-select 
-    p.settlementschedulesharedeductionid,
-    p.settlementscheduledeductionid,
-    p.policysettschedshareid,
-    p.deldate,
-    case when p.deldate is not null then 0 else p.totalamt end as totalamt, -- see my note on policy settlement sched full
-    p.actual_date,
-    p.lastupd
+select *
 
     from eff_range_source p
     where in_date = 1

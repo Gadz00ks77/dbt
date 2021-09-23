@@ -7,7 +7,7 @@ with cte_source as
 (
 select actual_date,policyid,lloydsbrokerid,brokerrole
 from {{ref('stg_policy_brokers')}}
-  where ledgerbroker = 'Y' --mostly resolves fan to one broker per policy (once pivoted below)
+  where hierarchyorder = 1 --ledgerbroker = 'Y' --mostly resolves fan to one broker per policy (once pivoted below)
 )
 
 select * 

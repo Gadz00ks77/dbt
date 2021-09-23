@@ -16,6 +16,7 @@ eff_range_source as(
     p.instalmentnum,
     p.instalmenttype,
     p.roe,
+    p.fintransid,
     p.lastupd,
     p.deldate,
     p.origccyiso as default_origccyiso --deductions don't have orig currencies for some reason, so we'll take them from here later. 
@@ -35,6 +36,7 @@ select
     p.roe,
     p.lastupd,
     p.deldate,
+    p.fintransid,
     default_origccyiso
     from eff_range_source p
     where in_date = 1

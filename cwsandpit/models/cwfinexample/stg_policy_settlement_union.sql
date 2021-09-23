@@ -18,6 +18,7 @@ pl.linestatus,
 pl.producingteam,
 pl.synd,
 psf.roe,
+psf.fintransid, --- added 21/09
 psf.origgross,
 psf.settgross,
 psf.origccyiso,
@@ -27,6 +28,7 @@ psf.schedshare_lastupd,
 p.inceptiondate,
 p.expirydate,
 p.yoa,
+p.bureausettledind,
 org_piv.assured,
 addr.addrid as assured_addr_id,
 org_piv.reassured,
@@ -83,6 +85,7 @@ pl.linestatus,
 pl.producingteam,
 pl.synd,
 pdf.roe,
+pdf.fintransid, --added 21/09
 null as origgross,
 pdf.totalamt as settgross,
 pss.default_origccyiso as origccyiso,
@@ -92,6 +95,7 @@ pdf.schedshare_lastupd,
 p.inceptiondate,
 p.expirydate,
 p.yoa,
+p.bureausettledind,
 org_piv.assured,
 addr.addrid as assured_addr_id,
 org_piv.reassured,
@@ -113,8 +117,9 @@ from {{ ref('stg_policy_settlement_sched_deduction_full') }} pdf
         
         join {{ ref('stg_policy_settlement_sched_share') }} psss 
             on pss.policysettschedid = psss.policysettschedid
+            and pdf.policysettschedshareid = psss.policysettschedshareid
             and pss.actual_date = psss.actual_date
-
+            
         join {{ ref('stg_policies') }} p 
             on pss.policyid = p.policyid
             and pss.actual_date = p.actual_date

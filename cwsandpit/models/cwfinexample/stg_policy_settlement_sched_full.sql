@@ -7,6 +7,7 @@ select
     pss.instalmentnum,
     pss.instalmenttype,
     pss.roe,
+    pss.fintransid,
     psss.policylineid,
     case when pss.deldate is not null then 0 else psss.origgross end as origgross, --so it seems like WNS occasionally delete rows from pss (and possibly ssd / sssd but not psss) - this accounts for that by setting the value to zero (and the lag will therefore gen a change)
     case when pss.deldate is not null then 0 else psss.settgross end as settgross,
