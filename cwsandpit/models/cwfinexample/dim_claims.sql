@@ -43,7 +43,7 @@ select
 sha2(v.claimid||
 v.valid_to::text) as claim_key,
 v.claimid::text as claim_nk,
-v.valid_from as effective_from,
+case when v.valid_from = '2019-12-31' then '1901-01-01' else v.valid_from end as effective_from,
 case when v.valid_to = '9999-12-31' then v.valid_to else dateadd(day,-1,v.valid_to) end as effective_to,
 case when v.valid_to = '9999-12-31' then 1 else 0 end as is_current_row,
 v.change_key,

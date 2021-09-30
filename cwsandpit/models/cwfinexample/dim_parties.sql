@@ -81,7 +81,7 @@ select
 sha2(v.orgid::text||
 v.valid_to::text) as party_key,
 v.orgid::text as party_nk,
-v.valid_from as effective_from,
+case when v.valid_from = '2019-12-31' then '1901-01-01' else v.valid_from end as effective_from,
 case when v.valid_to = '9999-12-31' then v.valid_to else dateadd(day,-1,v.valid_to) end as effective_to,
 case when v.valid_to = '9999-12-31' then 1 else 0 end as is_current_row,
 v.change_key,
@@ -140,7 +140,7 @@ select
 sha2(v.lloydsbrokerid::text||'broker'||
 v.valid_to::text) as party_key,
 v.lloydsbrokerid::text||'broker' as party_nk,
-v.valid_from as effective_from,
+case when v.valid_from = '2019-12-31' then '1901-01-01' else v.valid_from end as effective_from,
 case when v.valid_to = '9999-12-31' then v.valid_to else dateadd(day,-1,v.valid_to) end as effective_to,
 case when v.valid_to = '9999-12-31' then 1 else 0 end as is_current_row,
 v.change_key,

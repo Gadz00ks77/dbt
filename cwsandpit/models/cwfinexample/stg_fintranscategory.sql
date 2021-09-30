@@ -1,5 +1,7 @@
--- Create a "as at day" view of the Ledger Trans Table
+-- Fin Trans Staging
+
 --SOURCE: CURATED SNAPSHOT TABLE
+
 
 with cte_date_all as
 (
@@ -10,22 +12,13 @@ with cte_date_all as
 ),
 eff_range_source as(
     select 
-    p.ledgertransid,
-    p.contraind,
-    p.createddate,
-    p.upddate,
-    p.origamt,
-    p.ledgeramt,
-    p.ledgeraccountid,
-    p.fintransdetailid,
-    p.ledgertranstype,
-    p.ledgertransstatus,
-    p.origccyiso,
-    p.ledgerccyiso,
+    p.fintranscategoryid,
+    p.category,
+    p.groupname,
     case when actual_date >= valid_from and actual_date <= valid_to then 1 else 0 end as in_date,
     actual_date
     from 
-    ledgertrans p
+    fintranscategory p
     cross join cte_date_all d
 
 )

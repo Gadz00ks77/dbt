@@ -443,3 +443,109 @@ non-bureau booked,Deduction,Profit Commission,Deduction,Y,Booked Other Deduction
 non-bureau booked,Deduction,Reinsurance Commission,Deduction,Y,Booked Other Deduction (Additional)
 non-bureau booked,Deduction,Reinsurance Overriding Commission,Deduction,Y,Booked Other Deduction (Additional)
 non-bureau booked,Deduction,Reinsurance Profit Commission,Deduction,Y,Booked Other Deduction (Additional)
+booked bureau,Premium,001 - Nett Premium,Premium,N,Net Booked Premium
+booked bureau,Premium,002 - Deferred Premiums Released,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,003 - Premium Reserve Retained,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,004 - Premium Reserve Released,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,005 - Premium Portfolio Incoming,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,006 - Premium Portfolio Outgoing,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,007 - Nett Reserve Interest,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,008 - Reinsurance Costs,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,009 - Profit Commission,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,010 - Nett Claims,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,011 - Claim Reserve Retained,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,012 - Claim Reserve Released,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,013 - OCA Retained,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,014 - OCA Released,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,015 - Claim Portfolio Incoming,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,016 - Claim Portfolio Outgoing,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,017 - Reinsurance Recoveries,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,040 - Premium,Premium,N,Gross Booked Premium
+booked bureau,Premium,041 - Lay Up Returns,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,042 - Commission,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,043 - Commission Adjustment,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,044 - Overriding Commission,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,045 - Premium Taxes,Deduction,N,Booked IPT
+booked bureau,Premium,046 - Fire Brigade Charges,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,047 - Other Deductions,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,048 - Brokerage,Deduction,N,Booked Brokerage
+booked bureau,Premium,100 - Premium Reserve Interest,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,101 - Claim Reserve/OCA Interest,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,102 - Tax on Interest,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,110 - Paid Claims,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,111 - Paid Refunds,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,112 - Cash Loss,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,113 - Cash Loss Contra Entry,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,200 - Insurance Premium Tax,Deduction,N,Booked IPT
+booked bureau,Premium,211 - Reinstatement Premium,Premium,N,Gross Booked Premium
+booked bureau,Premium,050 - Returned Tax,Deduction,N,Booked Deductions (Other)
+booked bureau,Premium,002 - Deferred Premiums Released,Deduction,N,Net Booked Premium
+booked bureau,Premium,003 - Premium Reserve Retained,Deduction,N,Net Booked Premium
+booked bureau,Premium,004 - Premium Reserve Released,Deduction,N,Net Booked Premium
+booked bureau,Premium,005 - Premium Portfolio Incoming,Deduction,N,Net Booked Premium
+booked bureau,Premium,006 - Premium Portfolio Outgoing,Deduction,N,Net Booked Premium
+booked bureau,Premium,007 - Nett Reserve Interest,Deduction,N,Net Booked Premium
+booked bureau,Premium,008 - Reinsurance Costs,Deduction,N,Net Booked Premium
+booked bureau,Premium,009 - Profit Commission,Deduction,N,Net Booked Premium
+booked bureau,Premium,010 - Nett Claims,Deduction,N,Net Booked Premium
+booked bureau,Premium,011 - Claim Reserve Retained,Deduction,N,Net Booked Premium
+booked bureau,Premium,012 - Claim Reserve Released,Deduction,N,Net Booked Premium
+booked bureau,Premium,013 - OCA Retained,Deduction,N,Net Booked Premium
+booked bureau,Premium,014 - OCA Released,Deduction,N,Net Booked Premium
+booked bureau,Premium,015 - Claim Portfolio Incoming,Deduction,N,Net Booked Premium
+booked bureau,Premium,016 - Claim Portfolio Outgoing,Deduction,N,Net Booked Premium
+booked bureau,Premium,017 - Reinsurance Recoveries,Deduction,N,Net Booked Premium
+booked bureau,Premium,040 - Premium,Premium,N,Net Booked Premium
+booked bureau,Premium,041 - Lay Up Returns,Deduction,N,Net Booked Premium
+booked bureau,Premium,042 - Commission,Deduction,N,Net Booked Premium
+booked bureau,Premium,043 - Commission Adjustment,Deduction,N,Net Booked Premium
+booked bureau,Premium,044 - Overriding Commission,Deduction,N,Net Booked Premium
+booked bureau,Premium,045 - Premium Taxes,Deduction,N,Net Booked Premium
+booked bureau,Premium,046 - Fire Brigade Charges,Deduction,N,Net Booked Premium
+booked bureau,Premium,047 - Other Deductions,Deduction,N,Net Booked Premium
+booked bureau,Premium,048 - Brokerage,Deduction,N,Net Booked Premium
+booked bureau,Premium,100 - Premium Reserve Interest,Deduction,N,Net Booked Premium
+booked bureau,Premium,101 - Claim Reserve/OCA Interest,Deduction,N,Net Booked Premium
+booked bureau,Premium,102 - Tax on Interest,Deduction,N,Net Booked Premium
+booked bureau,Premium,110 - Paid Claims,Deduction,N,Net Booked Premium
+booked bureau,Premium,111 - Paid Refunds,Deduction,N,Net Booked Premium
+booked bureau,Premium,112 - Cash Loss,Deduction,N,Net Booked Premium
+booked bureau,Premium,113 - Cash Loss Contra Entry,Deduction,N,Net Booked Premium
+booked bureau,Premium,200 - Insurance Premium Tax,Deduction,N,Net Booked Premium
+booked bureau,Premium,211 - Reinstatement Premium,Premium,N,Net Booked Premium
+booked bureau,Premium,050 - Returned Tax,Deduction,N,Net Booked Premium
+booked bureau,Premium,002 - Deferred Premiums Released,Deduction,Y,Net Booked Premium
+booked bureau,Premium,003 - Premium Reserve Retained,Deduction,Y,Net Booked Premium
+booked bureau,Premium,004 - Premium Reserve Released,Deduction,Y,Net Booked Premium
+booked bureau,Premium,005 - Premium Portfolio Incoming,Deduction,Y,Net Booked Premium
+booked bureau,Premium,006 - Premium Portfolio Outgoing,Deduction,Y,Net Booked Premium
+booked bureau,Premium,007 - Nett Reserve Interest,Deduction,Y,Net Booked Premium
+booked bureau,Premium,008 - Reinsurance Costs,Deduction,Y,Net Booked Premium
+booked bureau,Premium,009 - Profit Commission,Deduction,Y,Net Booked Premium
+booked bureau,Premium,010 - Nett Claims,Deduction,Y,Net Booked Premium
+booked bureau,Premium,011 - Claim Reserve Retained,Deduction,Y,Net Booked Premium
+booked bureau,Premium,012 - Claim Reserve Released,Deduction,Y,Net Booked Premium
+booked bureau,Premium,013 - OCA Retained,Deduction,Y,Net Booked Premium
+booked bureau,Premium,014 - OCA Released,Deduction,Y,Net Booked Premium
+booked bureau,Premium,015 - Claim Portfolio Incoming,Deduction,Y,Net Booked Premium
+booked bureau,Premium,016 - Claim Portfolio Outgoing,Deduction,Y,Net Booked Premium
+booked bureau,Premium,017 - Reinsurance Recoveries,Deduction,Y,Net Booked Premium
+booked bureau,Premium,040 - Premium,Premium,Y,Net Booked Premium
+booked bureau,Premium,041 - Lay Up Returns,Deduction,Y,Net Booked Premium
+booked bureau,Premium,042 - Commission,Deduction,Y,Net Booked Premium
+booked bureau,Premium,043 - Commission Adjustment,Deduction,Y,Net Booked Premium
+booked bureau,Premium,044 - Overriding Commission,Deduction,Y,Net Booked Premium
+booked bureau,Premium,045 - Premium Taxes,Deduction,Y,Net Booked Premium
+booked bureau,Premium,046 - Fire Brigade Charges,Deduction,Y,Net Booked Premium
+booked bureau,Premium,047 - Other Deductions,Deduction,Y,Net Booked Premium
+booked bureau,Premium,048 - Brokerage,Deduction,Y,Net Booked Premium
+booked bureau,Premium,100 - Premium Reserve Interest,Deduction,Y,Net Booked Premium
+booked bureau,Premium,101 - Claim Reserve/OCA Interest,Deduction,Y,Net Booked Premium
+booked bureau,Premium,102 - Tax on Interest,Deduction,Y,Net Booked Premium
+booked bureau,Premium,110 - Paid Claims,Deduction,Y,Net Booked Premium
+booked bureau,Premium,111 - Paid Refunds,Deduction,Y,Net Booked Premium
+booked bureau,Premium,112 - Cash Loss,Deduction,Y,Net Booked Premium
+booked bureau,Premium,113 - Cash Loss Contra Entry,Deduction,Y,Net Booked Premium
+booked bureau,Premium,200 - Insurance Premium Tax,Deduction,Y,Net Booked Premium
+booked bureau,Premium,211 - Reinstatement Premium,Premium,Y,Net Booked Premium
+booked bureau,Premium,050 - Returned Tax,Deduction,Y,Net Booked Premium

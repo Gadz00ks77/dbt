@@ -1,8 +1,20 @@
 ---SOURCE: A COPY OF CURRENCY_DIM FROM REPORTING_COMMON
 
 
-select *
-from currency_dim
+ 
+ select 
+ 
+ currency_name,
+ isochar_code,
+ date_started,
+ date_withdrawn,
+ current_row_indicator,
+ case when effective_from  = '2019-12-31' then '1901-01-01' else effective_from end as effective_from,
+ effective_to,
+ currency_key
+ 
+ from currency_dim
+ 
 
 union 
 select 
@@ -11,7 +23,7 @@ select
 '1900-01-01'::date as date_started,
 '2099-01-01'::date as date_withdrawn,
 1 as current_row_indicator,
-'2019-12-31'::date as effective_from,
+'1901-01-01'::date as effective_from,
 '2099-01-01'::date as effective_to,
 sha2('n/a') as currency_key
 
@@ -22,6 +34,6 @@ select
 '1900-01-01'::date as date_started,
 '2099-01-01'::date as date_withdrawn,
 1 as current_row_indicator,
-'2019-12-31'::date as effective_from,
+'1901-01-01'::date as effective_from,
 '2099-01-01'::date as effective_to,
 sha2('Unknown') as currency_key
