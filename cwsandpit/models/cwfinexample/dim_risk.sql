@@ -24,6 +24,7 @@ p.bureausettledind,
 p.renewedfromref,
 p.periodtype,
 p.actual_date,
+p.placingtype,
 ifnull(p.layernum::text,'0')::text ||
 --ifnull(pp.basis::text,'0')::text ||
 ifnull(p.instalmentperiod::text,'0')::text ||
@@ -32,7 +33,7 @@ ifnull(p.policystatus::text,'0')::text ||
 ifnull(p.policyref::text,'0')::text ||
 ifnull(p.sectioncode::text,'0')::text ||
 ifnull(p.canceldate::text,'0')::text ||
-ifnull(p.policytype::text,'0')::text ||
+ifnull(p.placingtype::text,'0')::text ||
 ifnull(p.bureausettledind::text,'0')::text ||
 ifnull(p.renewedfromref::text,'0')::text ||
 ifnull(p.periodtype::text,'0')::text as change_key,
@@ -45,7 +46,7 @@ ifnull(p.policystatus::text,'0')::text ||
 ifnull(p.policyref::text,'0')::text ||
 ifnull(p.sectioncode::text,'0')::text ||
 ifnull(p.canceldate::text,'0')::text ||
-ifnull(p.policytype::text,'0')::text ||
+ifnull(p.placingtype::text,'0')::text ||
 ifnull(p.bureausettledind::text,'0')::text ||
 ifnull(p.renewedfromref::text,'0')::text ||
 ifnull(p.periodtype::text,'0')::text
@@ -92,7 +93,7 @@ v.policystatus as layer_status,
 v.policyref as convex_risk_reference,
 v.sectioncode as risk_section_identifier,
 v.canceldate as cancellation_date,
-v.policytype as placing_basis,
+v.placingtype as placing_basis,
 v.bureausettledind as is_bureau,
 v.policystatus as risk_status,
 v.renewedfromref as new_or_renewal,

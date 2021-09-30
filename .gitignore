@@ -4,3 +4,4 @@ trash.py
 .vscode
 venv/bin/dbt
 venv/bin
+cwsandpit/data/are_sample.csv
