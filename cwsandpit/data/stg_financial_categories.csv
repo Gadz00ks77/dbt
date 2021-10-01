@@ -18,14 +18,14 @@
 121,017 - Reinsurance Recoveries,Claims,Claims
 123,040 - Premium,Premium,Premium
 125,041 - Lay Up Returns,Deduction,Deduction
-127,042 - Commission,Deduction,Deduction
-129,043 - Commission Adjustment,Deduction,Deduction
-131,044 - Overriding Commission,Deduction,Deduction
-133,045 - Premium Taxes,Deduction,Deduction
-135,046 - Fire Brigade Charges,Deduction,Deduction
+127,042 - Commission,Commission,Deduction
+129,043 - Commission Adjustment,Commission,Deduction
+131,044 - Overriding Commission,Commission,Deduction
+133,045 - Premium Taxes,Tax,Tax
+135,046 - Fire Brigade Charges,Other Taxes,Tax
 137,047 - Other Deductions,Deduction,Deduction
-139,048 - Brokerage,Deduction,Deduction
-231,050 - Returned Tax,Deduction,Deduction
+139,048 - Brokerage,Brokerage,Deduction
+231,050 - Returned Tax,Other Taxes,Tax
 141,100 - Premium Reserve Interest,Premium,Premium
 143,101 - Claim Reserve/OCA Interest,Claims,Claims
 145,102 - Tax on Interest,Deduction,Deduction
@@ -33,14 +33,14 @@
 149,111 - Paid Refunds,Claims,Claims
 151,112 - Cash Loss,Claims,Claims
 153,113 - Cash Loss Contra Entry,Claims,Claims
-155,200 - Insurance Premium Tax,Deduction,Deduction
+155,200 - Insurance Premium Tax,Tax,Tax
 197,211 - Reinstatement Premium,Premium,Premium
-263,Administration Allowance,Deduction,Deduction
-253,Brokerage,Deduction,Deduction
-234,Brokerage,Deduction,Deduction
-267,Brokerage (Flat),Deduction,Deduction
-268,Brokerage (Profitability),Deduction,Deduction
-198,Brokerage payable,Deduction,Deduction
+263,Administration Allowance,Other Deductions,Deduction
+253,Brokerage,Brokerage,Deduction
+234,Brokerage,Brokerage,Deduction
+267,Brokerage (Flat),Brokerage,Deduction
+268,Brokerage (Profitability),Brokerage,Deduction
+198,Brokerage payable,Brokerage,Deduction
 49,Cash Amount (Broker),Cash,Cash
 51,Cash Amount (Third Party),Cash,Cash
 177,Cash Loss,Cash,Cash
@@ -55,169 +55,169 @@
 187,Claim Portfolio Outgoing,Claims,Claims
 183,Claim Reserve Released,Claims,Claims
 181,Claim Reserve Retained,Claims,Claims
-254,Commission,Deduction,Deduction
-200,Commission,Deduction,Deduction
-235,Commission DO NOT USE,Deduction,Deduction
-239,Continuity Credit,Deduction,Deduction
-266,Coverholder Commission,Deduction,Deduction
-241,CRO,Deduction,Deduction
-355,Dutch Tax ,Deduction,Deduction
-385,Federal Excise Tax,Deduction,Deduction
-260,Fees & Expenses,Deduction,Deduction
-255,Fire Brigade Charges,Deduction,Deduction
-202,Fire Brigade Charges,Deduction,Deduction
-69,Fire Brigade Taxes,Deduction,Deduction
-237,Fleeting Credit,Deduction,Deduction
-244,French IPT,Deduction,Deduction
-243,German IPT,Deduction,Deduction
-313,Greek Additional Tax 12.64%,Deduction,Deduction
-314,Greek Tax - 12.4%,Deduction,Deduction
-217,Interest on premium retained,Deduction,Deduction
-300,IPT Algeria,IPT,Deduction
-274,IPT American Samoa,IPT,Deduction
-272,IPT Angola,IPT,Deduction
-271,IPT Anguilla,IPT,Deduction
-270,IPT Antigua and Barbuda,IPT,Deduction
-273,IPT Argentina,IPT,Deduction
-276,IPT Australia,IPT,Deduction
-275,IPT Austria,IPT,Deduction
-277,IPT Azerbaijan,IPT,Deduction
-285,IPT Bahamas,IPT,Deduction
-281,IPT Bahrain,IPT,Deduction
-278,IPT Barbados,IPT,Deduction
-279,IPT Belgium,IPT,Deduction
-282,IPT Bermuda,IPT,Deduction
-283,IPT Bolivia,IPT,Deduction
-284,IPT Brazil,IPT,Deduction
-280,IPT Bulgaria,IPT,Deduction
-331,IPT Cambodia,IPT,Deduction
-286,IPT Canada,IPT,Deduction
-287,IPT Canada NewFoundland,IPT,Deduction
-288,IPT Canada Ontario,IPT,Deduction
-289,IPT Canada Quebec,IPT,Deduction
-334,IPT Cayman Islands,IPT,Deduction
-291,IPT Chile,IPT,Deduction
-292,IPT China,IPT,Deduction
-293,IPT Colombia,IPT,Deduction
-294,IPT Costa Rica,IPT,Deduction
-319,IPT Croatia,IPT,Deduction
-295,IPT Cyprus,IPT,Deduction
-297,IPT Denmark,IPT,Deduction
-298,IPT Dominica,IPT,Deduction
-299,IPT Dominican Republic,IPT,Deduction
-301,IPT Ecuador,IPT,Deduction
-375,IPT El Salvador,IPT,Deduction
-305,IPT Fiji,IPT,Deduction
-304,IPT Finland,IPT,Deduction
-306,IPT France,IPT,Deduction
-362,IPT French Polynesia,IPT,Deduction
-296,IPT Germany,IPT,Deduction
-315,IPT Greece,IPT,Deduction
-309,IPT Grenada,IPT,Deduction
-312,IPT Guadeloupe,IPT,Deduction
-317,IPT Guam,IPT,Deduction
-316,IPT Guatemala,IPT,Deduction
-310,IPT Guernsey,IPT,Deduction
-311,IPT Guinea,IPT,Deduction
-318,IPT Guyana,IPT,Deduction
-320,IPT Haiti,IPT,Deduction
-321,IPT Hungary,IPT,Deduction
-322,IPT Hungary Stamp Duty,IPT,Deduction
-326,IPT India,IPT,Deduction
-323,IPT Indonesia,IPT,Deduction
-324,IPT Ireland,IPT,Deduction
-325,IPT Israel,IPT,Deduction
-327,IPT Italy,IPT,Deduction
-330,IPT Jamaica,IPT,Deduction
-335,IPT Kazakhstan,IPT,Deduction
-332,IPT Korea,IPT,Deduction
-333,IPT Kuwait,IPT,Deduction
-340,IPT Latvia,IPT,Deduction
-336,IPT Lebanon,IPT,Deduction
-338,IPT Liechtenstein,IPT,Deduction
-339,IPT Luxembourg,IPT,Deduction
-345,IPT Macao,IPT,Deduction
-350,IPT Malaysia,IPT,Deduction
-348,IPT Malta,IPT,Deduction
-347,IPT Mauritania,IPT,Deduction
-349,IPT Mexico,IPT,Deduction
-342,IPT Monaco,IPT,Deduction
-344,IPT Mongolia,IPT,Deduction
-341,IPT Morocco,IPT,Deduction
-351,IPT Namibia,IPT,Deduction
-356,IPT Netherlands,IPT,Deduction
-352,IPT New Caledonia,IPT,Deduction
-358,IPT New Zealand,IPT,Deduction
-353,IPT Niger,IPT,Deduction
-354,IPT Nigeria,IPT,Deduction
-357,IPT Norway,IPT,Deduction
-359,IPT Panama,IPT,Deduction
-363,IPT Papua New Guinea,IPT,Deduction
-361,IPT Peru,IPT,Deduction
-365,IPT Portugal,IPT,Deduction
-366,IPT Portugal Parafiscal,IPT,Deduction
-364,IPT Puerto Rico,IPT,Deduction
-367,IPT Romania,IPT,Deduction
-369,IPT Russian Federation,IPT,Deduction
-337,IPT Saint Lucia,IPT,Deduction
-343,IPT Saint Martin (French part),IPT,Deduction
-387,IPT Saint Vincent and the Gre,IPT,Deduction
-346,IPT Saipan,IPT,Deduction
-395,IPT Samoa,IPT,Deduction
-370,IPT Saudi Arabia,IPT,Deduction
-368,IPT Serbia,IPT,Deduction
-371,IPT Seychelles,IPT,Deduction
-372,IPT Singapore,IPT,Deduction
-374,IPT Slovakia,IPT,Deduction
-373,IPT Slovenia,IPT,Deduction
-397,IPT South Africa Income Tax,IPT,Deduction
-302,IPT Spain,IPT,Deduction
-290,IPT Switzerland,IPT,Deduction
-382,IPT Taiwan,IPT,Deduction
-376,IPT Thailand,IPT,Deduction
-377,IPT Tokelau,IPT,Deduction
-381,IPT Trinidad and Tobago,IPT,Deduction
-379,IPT Tunisia,IPT,Deduction
-380,IPT Turkey,IPT,Deduction
-378,IPT Turkmenistan,IPT,Deduction
-308,IPT UK,IPT,Deduction
-383,IPT Ukraine,IPT,Deduction
-269,IPT United Arab Emirates,IPT,Deduction
-384,IPT United States,IPT,Deduction
-386,IPT Uruguay,IPT,Deduction
-388,IPT Venezuela,IPT,Deduction
-394,IPT Vietnam,IPT,Deduction
-392,IPT Virgin Islands,IPT,Deduction
-393,IPT Virgin Islands,IPT,Deduction
-396,IPT Xchanging (*UNKNOWN*),IPT,Deduction
-265,Irish Levy,Deduction,Deduction
-328,Italian Solidarity Fund - 1%,Deduction,Deduction
-329,Italy Pt & Pc - 22.25%,Deduction,Deduction
+254,Commission,Commission,Deduction
+200,Commission,Commission,Deduction
+235,Commission DO NOT USE,Commission,Deduction
+239,Continuity Credit,Other Deductions,Deduction
+266,Coverholder Commission,Commission,Deduction
+241,CRO,Other Taxes,Tax
+355,Dutch Tax ,Other Taxes,Tax
+385,Federal Excise Tax,Other Deductions,Deduction
+260,Fees & Expenses,Other Deductions,Deduction
+255,Fire Brigade Charges,Other Deductions,Deduction
+202,Fire Brigade Charges,Other Deductions,Deduction
+69,Fire Brigade Taxes,Other Taxes,Tax
+237,Fleeting Credit,Other Deductions,Deduction
+244,French IPT,Tax,Tax
+243,German IPT,Tax,Tax
+313,Greek Additional Tax 12.64%,Other Taxes,Tax
+314,Greek Tax - 12.4%,Other Taxes,Tax
+217,Interest on premium retained,Other Deductions,Deduction
+300,IPT Algeria,Tax,Tax
+274,IPT American Samoa,Tax,Tax
+272,IPT Angola,Tax,Tax
+271,IPT Anguilla,Tax,Tax
+270,IPT Antigua and Barbuda,Tax,Tax
+273,IPT Argentina,Tax,Tax
+276,IPT Australia,Tax,Tax
+275,IPT Austria,Tax,Tax
+277,IPT Azerbaijan,Tax,Tax
+285,IPT Bahamas,Tax,Tax
+281,IPT Bahrain,Tax,Tax
+278,IPT Barbados,Tax,Tax
+279,IPT Belgium,Tax,Tax
+282,IPT Bermuda,Tax,Tax
+283,IPT Bolivia,Tax,Tax
+284,IPT Brazil,Tax,Tax
+280,IPT Bulgaria,Tax,Tax
+331,IPT Cambodia,Tax,Tax
+286,IPT Canada,Tax,Tax
+287,IPT Canada NewFoundland,Tax,Tax
+288,IPT Canada Ontario,Tax,Tax
+289,IPT Canada Quebec,Tax,Tax
+334,IPT Cayman Islands,Tax,Tax
+291,IPT Chile,Tax,Tax
+292,IPT China,Tax,Tax
+293,IPT Colombia,Tax,Tax
+294,IPT Costa Rica,Tax,Tax
+319,IPT Croatia,Tax,Tax
+295,IPT Cyprus,Tax,Tax
+297,IPT Denmark,Tax,Tax
+298,IPT Dominica,Tax,Tax
+299,IPT Dominican Republic,Tax,Tax
+301,IPT Ecuador,Tax,Tax
+375,IPT El Salvador,Tax,Tax
+305,IPT Fiji,Tax,Tax
+304,IPT Finland,Tax,Tax
+306,IPT France,Tax,Tax
+362,IPT French Polynesia,Tax,Tax
+296,IPT Germany,Tax,Tax
+315,IPT Greece,Tax,Tax
+309,IPT Grenada,Tax,Tax
+312,IPT Guadeloupe,Tax,Tax
+317,IPT Guam,Tax,Tax
+316,IPT Guatemala,Tax,Tax
+310,IPT Guernsey,Tax,Tax
+311,IPT Guinea,Tax,Tax
+318,IPT Guyana,Tax,Tax
+320,IPT Haiti,Tax,Tax
+321,IPT Hungary,Tax,Tax
+322,IPT Hungary Stamp Duty,Tax,Tax
+326,IPT India,Tax,Tax
+323,IPT Indonesia,Tax,Tax
+324,IPT Ireland,Tax,Tax
+325,IPT Israel,Tax,Tax
+327,IPT Italy,Tax,Tax
+330,IPT Jamaica,Tax,Tax
+335,IPT Kazakhstan,Tax,Tax
+332,IPT Korea,Tax,Tax
+333,IPT Kuwait,Tax,Tax
+340,IPT Latvia,Tax,Tax
+336,IPT Lebanon,Tax,Tax
+338,IPT Liechtenstein,Tax,Tax
+339,IPT Luxembourg,Tax,Tax
+345,IPT Macao,Tax,Tax
+350,IPT Malaysia,Tax,Tax
+348,IPT Malta,Tax,Tax
+347,IPT Mauritania,Tax,Tax
+349,IPT Mexico,Tax,Tax
+342,IPT Monaco,Tax,Tax
+344,IPT Mongolia,Tax,Tax
+341,IPT Morocco,Tax,Tax
+351,IPT Namibia,Tax,Tax
+356,IPT Netherlands,Tax,Tax
+352,IPT New Caledonia,Tax,Tax
+358,IPT New Zealand,Tax,Tax
+353,IPT Niger,Tax,Tax
+354,IPT Nigeria,Tax,Tax
+357,IPT Norway,Tax,Tax
+359,IPT Panama,Tax,Tax
+363,IPT Papua New Guinea,Tax,Tax
+361,IPT Peru,Tax,Tax
+365,IPT Portugal,Tax,Tax
+366,IPT Portugal Parafiscal,Tax,Tax
+364,IPT Puerto Rico,Tax,Tax
+367,IPT Romania,Tax,Tax
+369,IPT Russian Federation,Tax,Tax
+337,IPT Saint Lucia,Tax,Tax
+343,IPT Saint Martin (French part),Tax,Tax
+387,IPT Saint Vincent and the Gre,Tax,Tax
+346,IPT Saipan,Tax,Tax
+395,IPT Samoa,Tax,Tax
+370,IPT Saudi Arabia,Tax,Tax
+368,IPT Serbia,Tax,Tax
+371,IPT Seychelles,Tax,Tax
+372,IPT Singapore,Tax,Tax
+374,IPT Slovakia,Tax,Tax
+373,IPT Slovenia,Tax,Tax
+397,IPT South Africa Income Tax,Tax,Tax
+302,IPT Spain,Tax,Tax
+290,IPT Switzerland,Tax,Tax
+382,IPT Taiwan,Tax,Tax
+376,IPT Thailand,Tax,Tax
+377,IPT Tokelau,Tax,Tax
+381,IPT Trinidad and Tobago,Tax,Tax
+379,IPT Tunisia,Tax,Tax
+380,IPT Turkey,Tax,Tax
+378,IPT Turkmenistan,Tax,Tax
+308,IPT UK,Tax,Tax
+383,IPT Ukraine,Tax,Tax
+269,IPT United Arab Emirates,Tax,Tax
+384,IPT United States,Tax,Tax
+386,IPT Uruguay,Tax,Tax
+388,IPT Venezuela,Tax,Tax
+394,IPT Vietnam,Tax,Tax
+392,IPT Virgin Islands,Tax,Tax
+393,IPT Virgin Islands,Tax,Tax
+396,IPT Xchanging (*UNKNOWN*),Tax,Tax
+265,Irish Levy,Other Deductions,Deduction
+328,Italian Solidarity Fund - 1%,Other Taxes,Tax
+329,Italy Pt & Pc - 22.25%,Other Taxes,Tax
 55,Journal entry (Broker - Client),Other,Other
 53,Journal entry (Broker - Underwriter),Other,Other
-262,Lead Office Survey Fees,Deduction,Deduction
-208,Local tax payable on gross premium,Deduction,Deduction
+262,Lead Office Survey Fees,Other Deductions,Deduction
+208,Local tax payable on gross premium,Other Taxes,Tax
 223,Loss Portfolio In,Claims,Claims
 224,Loss Portfolio Out,Claims,Claims
 249,Loss Portfolio Transfer In,Claims,Claims
 250,Loss Portfolio Transfer Out,Claims,Claims
 211,Loss Reserve Interest,Claims,Claims
 222,Loss Reserve Retained,Claims,Claims
-261,Management Expenses,Deduction,Deduction
-204,Management Handling Fee,Deduction,Deduction
-225,New Deduction,Deduction,Deduction
-195,Opening Balance,Deduction,Deduction
-205,Other Deduction,Deduction,Deduction
-171,Other Deductions,Deduction,Deduction
-264,Other Fees,Deduction,Deduction
-167,Overriding Commission,Deduction,Deduction
-206,Overriding commission,Deduction,Deduction
-236,Package Credit,Deduction,Deduction
+261,Management Expenses,Other Deductions,Deduction
+204,Management Handling Fee,Other Deductions,Deduction
+225,New Deduction,Other Deductions,Deduction
+195,Opening Balance,Other Deductions,Deduction
+205,Other Deduction,Other Deductions,Deduction
+171,Other Deductions,Other Deductions,Deduction
+264,Other Fees,Other Deductions,Deduction
+167,Overriding Commission,Other Deductions,Deduction
+206,Overriding commission,Other Deductions,Deduction
+236,Package Credit,Other Deductions,Deduction
 173,Paid Claims,Claims,Claims
 175,Paid Refunds,Claims,Claims
-360,Peruvian Withholding Tax,Deduction,Deduction
-207,Placing Service Agreement,Deduction,Deduction
-216,PRC,Unknown,Unknown
+360,Peruvian Withholding Tax,Other Deductions,Deduction
+207,Placing Service Agreement,Other Deductions,Deduction
+216,PRC,Other,Other
 159,Premium,Premium,Premium
 214,Premium,Premium,Premium
 157,Premium,Premium,Premium
@@ -230,34 +230,34 @@
 218,Premium Reserve Interest,Premium,Premium
 161,Premium Reserve Retained,Premium,Premium
 219,Premium Reserve Retained,Premium,Premium
-169,Premium Taxes,Deduction,Deduction
-233,Profit Commission,Deduction,Deduction
-256,Profit Commission,Deduction,Deduction
-215,Profit Commission,Deduction,Deduction
-257,Reinsurance Commission,Deduction,Deduction
-165,Reinsurance Costs,Deduction,Deduction
-258,Reinsurance Overriding Commission,Deduction,Deduction
-259,Reinsurance Profit Commission,Deduction,Deduction
-240,Renewal Incentive Bonus,Deduction,Deduction
-232,RTT - Return Tax,Deduction,Deduction
-303,Spanish Tax Both - 6.3%,Deduction,Deduction
-209,Subscription Market Brokerage,Deduction,Deduction
-210,Survey Fee,Deduction,Deduction
-252,Test Ded - MS,Deduction,Deduction
-251,Test Ded - MS,Deduction,Deduction
-43,To Pay Fees,Fees,Claims
-47,To Pay Indem,Indemnity,Claims
-41,To Pay Indem,Indemnity,Claims
-203,United Kingdom Insurance Premium Tax,Deduction,Deduction
-238,Up-Front Performance Continuity Credit,Deduction,Deduction
-307,Value Added Tax,Deduction,Deduction
-246,Value Added Tax (VAT),Deduction,Deduction
-389,Venezuala Mun&Super ,Deduction,Deduction
-390,Venezuala Municipal Tax ,Deduction,Deduction
-391,Venezuala Superintend Tax ,Deduction,Deduction
-230,Write Off,Deduction,Deduction
-229,Write-Off,Deduction,Deduction
+169,Premium Taxes,Other Taxes,Tax
+233,Profit Commission,Profit Commission,Deduction
+256,Profit Commission,Profit Commission,Deduction
+215,Profit Commission,Profit Commission,Deduction
+257,Reinsurance Commission,Commission,Deduction
+165,Reinsurance Costs,Other Deductions,Deduction
+258,Reinsurance Overriding Commission,Commission,Deduction
+259,Reinsurance Profit Commission,Commission,Deduction
+240,Renewal Incentive Bonus,Other Deductions,Deduction
+232,RTT - Return Tax,Other Taxes,Tax
+303,Spanish Tax Both - 6.3%,Other Taxes,Tax
+209,Subscription Market Brokerage,Other Deductions,Deduction
+210,Survey Fee,Other Deductions,Deduction
+252,Test Ded - MS,Other Deductions,Deduction
+251,Test Ded - MS,Other Deductions,Deduction
+43,To Pay Fees,Claims,Fees
+47,To Pay Indem,Claims,Indemnity
+41,To Pay Indem,Claims,Indemnity
+203,United Kingdom Insurance Premium Tax,Tax,Tax
+238,Up-Front Performance Continuity Credit,Other,Other
+307,Value Added Tax,Other Taxes,Tax
+246,Value Added Tax (VAT),Other Taxes,Tax
+389,Venezuala Mun&Super ,Other Taxes,Tax
+390,Venezuala Municipal Tax ,Other Taxes,Tax
+391,Venezuala Superintend Tax ,Other Taxes,Tax
+230,Write Off,Other,Other
+229,Write-Off,Other,Other
 212,XL Premium of Joint Account,Deduction,Deduction
 -1,Premium,Premium,Premium
--2,Indemnity,Indemnity,Claim
--3,Fee,Fee,Claim
+-2,Indemnity,Claim,Indemnity
+-3,Fee,Claim,Fee
