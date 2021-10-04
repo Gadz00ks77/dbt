@@ -16,6 +16,7 @@ t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
 sha2('n/a') as claim_key,
+sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
 li.insured_line_key,
 tr.inceptiondate::date as inception_date_key,
@@ -136,6 +137,7 @@ t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
 c.claim_key,
+ifnull(pd.peril_key,sha2('Unknown')) as claim_peril_key,
 le.loss_event_key,
 li.insured_line_key,
 tr.inceptiondate::date as inception_date_key,
@@ -161,11 +163,14 @@ from {{ref('stg_fct_transactions_claims')}} tr
 
     left join {{ref('dim_financial_categories')}} categories
         on tr.Category_Description::text = categories.sub_category
-        and categories.parent_category = 'Claim'
+        and categories.parent_category = 'Claims'
 
     left join {{ref('dim_transaction_events')}} t_events
         on tr.transaction_event = t_events.transaction_event
         and tr.transaction_subevent = t_events.transaction_sub_event
+
+    left join {{ref('dim_perils')}} pd 
+        on tr.claimperil = pd.peril_nk
         
     left join {{ref('dim_risk')}} r
         on tr.policyid = r.risk_nk
@@ -263,6 +268,7 @@ t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
 sha2('n/a') as claim_key,
+sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
 li.insured_line_key,
 tr.inceptiondate::date as inception_date_key,
@@ -383,6 +389,7 @@ t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
 sha2('n/a') as claim_key,
+sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
 li.insured_line_key,
 tr.inceptiondate::date as inception_date_key,
@@ -409,12 +416,12 @@ from {{ref('stg_fct_booked_b_transactions')}} tr
     left join {{ref('dim_financial_categories')}} categories
         on tr.ftcr_fintranscategoryid::text = categories.nk_financial_category
         
-    --left join {{ref('stg_booked_event_lookup')}} lkp 
-    --    on tr.instalmenttype = lkp.lookup_value
+    left join {{ref('stg_booked_b_telookup')}} lkp 
+        on categories.sub_category = lkp.lookup_fincategory
         
     left join {{ref('dim_transaction_events')}} t_events
         on 'Booked' = t_events.transaction_event
-        and 'Other' = t_events.transaction_sub_event -- the Swing / Reinstatement are established from InstalmentTypes and you can't (reliably) get that for Bureau policies.
+        and ifnull(lkp.transaction_sub_event,'Other') = t_events.transaction_sub_event 
         
     left join {{ref('dim_risk')}} r
         on tr.policyid = r.risk_nk
@@ -502,6 +509,7 @@ t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
 sha2('n/a') as claim_key,
+sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
 li.insured_line_key,
 tr.inceptiondate::date as inception_date_key,

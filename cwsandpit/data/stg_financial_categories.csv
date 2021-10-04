@@ -259,5 +259,5 @@
 229,Write-Off,Other,Other
 212,XL Premium of Joint Account,Deduction,Deduction
 -1,Premium,Premium,Premium
--2,Indemnity,Claim,Indemnity
--3,Fee,Claim,Fee
+-2,Indemnity,Indemnity,Claims
+-3,Fee,Fee,Claims

@@ -262,6 +262,7 @@ cte_union as (
             '5_financial_category',u.Category_Description) as nk_transaction,
         (u.claimid::text||u.movementdate::text||u.transaction_event||u.transaction_subevent||u.Category_Description) as change_key,
         u.claimid,
+        cl.claimperil,
         ifnull(pl.policyid,lead(pl.policyid) ignore nulls over (partition by u.claimid order by movementdateonly)) as policyid, --due to misalignments on the ingestion points of files (or the updates of associated rows) take the first applicable value from the associated record. This is valid. (No Policy = No Claim)
         ifnull(polline.synd,lead(polline.synd) ignore nulls over (partition by u.claimid order by movementdateonly)) as synd,
         ifnull(polline.producingteam,lead(polline.producingteam) ignore nulls over (partition by u.claimid order by movementdateonly)) as producingteam,
