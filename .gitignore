@@ -6,3 +6,4 @@ venv/bin/dbt
 venv/bin
 cwsandpit/data/are_sample.csv
 cwsandpit/data/accounting_event_matrix.csv
+cwsandpit/data/placingbasismapping.csv

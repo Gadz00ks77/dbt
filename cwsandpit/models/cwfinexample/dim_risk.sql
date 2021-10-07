@@ -94,9 +94,12 @@ v.policyref as convex_risk_reference,
 v.sectioncode as risk_section_identifier,
 v.canceldate as cancellation_date,
 v.placingtype as placing_basis,
+pl.contracttypecode as contract_type,
 v.bureausettledind as is_bureau,
 v.policystatus as risk_status,
 v.renewedfromref as new_or_renewal,
 v.periodtype as period_basis
 from 
 cte_valids v
+  join {{ref('placingbasismapping')}} pl 
+    on v.placingtype = pl.placingbasiscode
