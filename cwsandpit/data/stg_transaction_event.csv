@@ -1,14 +1,14 @@
-﻿TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
-Written,Other
-Written,Reinstatement
-Written,Swing
-Inward Claim,Outstanding - Share Movement
-Inward Claim,Claim Paid - Market
-Inward Claim,Claim Paid - Share
-Inward Claim,Outstanding - Market Movement
-Booked,Other
-Booked,Reinstatement
-Booked,Swing
-Received,Other
-Received,Reinstatement
-Received,Swing
+﻿TRANSACTION_EVENT_CODE,TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
+WO,Written,Other
+WR,Written,Reinstatement
+WS,Written,Swing
+ICOS,Inward Claim,Outstanding - Share Movement
+ICPM,Inward Claim,Claim Paid - Market
+ICPS,Inward Claim,Claim Paid - Share
+ICOM,Inward Claim,Outstanding - Market Movement
+BO,Booked,Other
+BR,Booked,Reinstatement
+BS,Booked,Swing
+RO,Received,Other
+RR,Received,Reinstatement
+RS,Received,Swing

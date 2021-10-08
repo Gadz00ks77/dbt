@@ -7,3 +7,5 @@ venv/bin
 cwsandpit/data/are_sample.csv
 cwsandpit/data/accounting_event_matrix.csv
 cwsandpit/data/placingbasismapping.csv
+cwsandpit/data/are_sample_cobs.csv
+cwsandpit/data/targetmarket_mapping.csv

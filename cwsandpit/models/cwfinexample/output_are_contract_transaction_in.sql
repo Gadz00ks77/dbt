@@ -14,8 +14,8 @@ NULL                    as SUB_SYSTEM_ID,
 NULL                    as MESSAGE_ID,
 'FDU'                   as REMITTING_SYSTEM_ID,
 NULL                    as ARRIVAL_TIME,
-ws.periodic_key         as SOURCE_TRAN_NO,
-NULL                    as SOURCE_TRAN_VER,
+NULL                    as SOURCE_TRAN_NO,
+ws.periodic_key         as SOURCE_TRAN_VER,
 NULL                    as EVENT_AUDIT_ID,
 NULL                    as BUSINESS_DATE,
 ws.source_system        as SOURCE_SYS_INST_CODE, -- Ultimate Transaction Source (Eclipse)
@@ -31,7 +31,7 @@ ws.snapshot_date        as AE_ACCOUNTING_DATE, -- Movement Date
 NULL                    as AE_POS_NEG,
 NULL                    as AE_DIMENSION_1, 
 ws.uw_year_key          as AE_DIMENSION_2, -- Uw Year
-NULL                    as AE_DIMENSION_3, -- Acc Year
+ws.date_of_loss_key     as AE_DIMENSION_3, -- Acc Year
 'TBC'                   as AE_DIMENSION_4, -- Mythic "COB" Nonsense
 'TBC'                   as AE_DIMENSION_5, -- Target Market
 'TBC'                   as AE_DIMENSION_6, -- Intercompany
@@ -153,7 +153,8 @@ group by
     ws.is_addition,
     pd.peril_code,
     oc.isochar_code,
-    il.line_status
+    il.line_status,
+    ws.date_of_loss_key
 
 ), cte_capture_change as (
 select 
@@ -203,6 +204,15 @@ select
           ae_accounting_date
 
         )                           as change_marker
+    ,dense_rank(
+        ) over
+        (
+        partition by 
+          contract_clicode
+        order by
+          ae_accounting_date
+
+        )      as change_pol_level
     ,i.*
 
 from cte_informat i
@@ -230,7 +240,6 @@ select
 
 nk_transin as _nk_transin,
 snapshot_date as _snapshot_date,
-ID,
 EVENT_ERROR_STRING, 
 NO_RETRIES,
 STAN_RULE_IDENT,
@@ -244,19 +253,19 @@ EVENT_AUDIT_ID,
 BUSINESS_DATE,
 AE_ACC_EVENT_TYPE_ID,
 AE_SUB_EVENT_ID,
-AE_ACCOUNTING_DATE, -- Movement Date
+AE_ACCOUNTING_DATE::datetime AE_ACCOUNTING_DATE, -- Movement Date
 AE_POS_NEG,
 AE_DIMENSION_1, 
-AE_DIMENSION_2, -- Uw Year
-AE_DIMENSION_3, -- Acc Year
-AE_DIMENSION_4, -- Mythic "COB" Nonsense
-AE_DIMENSION_5, -- Target Market
+substring(AE_DIMENSION_2,1,4) AE_DIMENSION_2, -- Uw Year
+substring(AE_DIMENSION_3,1,4) AS_DIMENSION_3, -- Acc Year
+co.major as AE_DIMENSION_4, -- Mythic "COB" Nonsense
+tmm.targetmarket as AE_DIMENSION_5, -- Target Market
 AE_DIMENSION_6, -- Intercompany
 AE_DIMENSION_7, -- Placing Basis
 AE_DIMENSION_8, -- Contract Type
 AE_DIMENSION_9, 
 AE_DIMENSION_10,
-AE_DIMENSION_11, -- More "COB" Stuff
+co.class_code as AE_DIMENSION_11, -- More "COB" Stuff
 AE_DIMENSION_12,
 AE_DIMENSION_13, -- RI Contract
 AE_DIMENSION_14, -- Reinsurer
@@ -280,7 +289,7 @@ TAX_CODE1,
 TAX_CODE2,
 TAX_CODE3,
 INVOICE_DATE,
-OTHER_DATE1, -- Accounting Date
+(substring(OTHER_DATE1::text,1,4)||'-'||substring(OTHER_DATE1::text,5,6)||'-01')::datetime as OTHER_DATE1, -- Accounting Date
 OTHER_DATE2,
 TOTAL_AMOUNT,
 CLIENT_TEXT1, -- Transaction Event
@@ -290,7 +299,7 @@ CLIENT_TEXT4, -- Financial Category
 CLIENT_TEXT5, -- Financial Sub Category
 CLIENT_TEXT6, -- Is Addition Marker
 CLIENT_TEXT7, -- Peril Code (N/A for Premium)
-CLIENT_TEXT8, -- New Policy Marker (To Be Evaluated Later)
+case when change_pol_level = 1 then 'New' Else 'Not New' end as CLIENT_TEXT8, -- New Policy Marker
 CLIENT_TEXT9, -- Original Currency Code
 CLIENT_TEXT10,
 CLIENT_TEXT11,
@@ -317,6 +326,14 @@ AE_VALUE_DATE,
 LOCAL_AMOUNT,
 LOCAL_CU_CURRENCY_ISO_CODE
 
-from cte_lagged
+from cte_lagged l
+
+   join {{ref('are_sample_cobs')}} co on
+      l.contract_clicode = co.eclipse_policy_reference
+
+    join {{ref('targetmarket_mapping')}} tmm on 
+       tmm.lineref = l.contract_clicode
+
 where lagged_change_marker != change_marker
+
 order by _snapshot_date,_nk_transin
