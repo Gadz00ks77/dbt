@@ -16,9 +16,9 @@ where tr.transaction_date < d.date::date --create a fan of transactions over tim
 select 
   
   *,
-  last_value(tr.inceptiondate::date) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_inception_date, -- give the last appropriate value in the snapshot range (e.g. the last line record up to that snapshot date)
-  last_value(tr.expirydate::date) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_expiry_date,
-  last_value(tr.yoa::int) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_yoa,
+--   last_value(tr.inceptiondate::date) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_inception_date, -- give the last appropriate value in the snapshot range (e.g. the last line record up to that snapshot date)
+--   last_value(tr.expirydate::date) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_expiry_date,
+--   last_value(tr.yoa::int) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_yoa,
   last_value(tr.assured) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_assured,
   last_value(tr.reassured) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_reassured,
   last_value(tr.client) over (partition by tr.snapshot_date,tr.policyid order by tr.transaction_date) as last_client,
@@ -42,9 +42,9 @@ tr.policyid,
 tr.policylineid,
 tr.is_addition,
 tr.ftcr_fintranscategoryid,
-tr.last_inception_date as inception_date_key,
-tr.last_expiry_date as expiry_date_key,
-(tr.last_yoa||'-01'||'-01') as uw_year_key,  
+-- tr.last_inception_date as inception_date_key,
+-- tr.last_expiry_date as expiry_date_key,
+-- (tr.last_yoa||'-01'||'-01') as uw_year_key,  
 tr.origccyiso,
 tr.ledgerccyiso,
 tr.last_assured as assured,
@@ -75,10 +75,10 @@ tr.last_synd,
 tr.last_producingteam,
 tr.last_placer,
 tr.last_producer,
-tr.last_retailer,
-tr.last_inception_date,
-tr.last_expiry_date,
-(tr.last_yoa||'-01'||'-01') 
+tr.last_retailer
+-- tr.last_inception_date,
+-- tr.last_expiry_date,
+-- (tr.last_yoa||'-01'||'-01') 
 
 )
 
@@ -91,9 +91,9 @@ r.risk_key,
 li.insured_line_key,
 orig_ccy.currency_key as orig_ccy_key,
 sett_ccy.currency_key as sett_ccy_key,
-inception_date_key,
-expiry_date_key,
-uw_year_key,
+last_value(po.inceptiondate::date) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as inception_date_key,
+last_value(po.expirydate::date) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as expiry_date_key,
+case when last_value(po.yoa) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) is null then null else (last_value(po.yoa) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date)||'-01'||'-01')  end uw_year_key,
 is_addition,  
 ifnull(pa.party_key,sha2('Unknown')) as assured_party_key,
 ifnull(pr.party_key,sha2('Unknown')) as reassured_party_key,
@@ -120,6 +120,11 @@ cte_cumulative cu
         on cu.policyid = r.risk_nk
         and r.source_system = cu.source_system 
         and cu.snapshot_date between r.effective_from and r.effective_to 
+
+    left join {{ref('stg_policies')}} po 
+        on cu.policyid = po.policyid
+        and cu.snapshot_date = po.actual_date
+
 
     left join {{ref('dim_financial_categories')}} categories
         on cu.ftcr_fintranscategoryid::text = categories.nk_financial_category
