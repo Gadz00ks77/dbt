@@ -230,6 +230,12 @@ order by
 
 ),
 
+distinct_targmarkets as ( -- this should not be necessary, but there are dupes on the file received from Actuarial
+
+select distinct lineref,targetmarket from {{ref('targetmarket_mapping')}} 
+
+),
+
 cte_lagged as (
 
 select ifnull(lag(change_marker) over (partition by nk_transin order by snapshot_date),-1) as lagged_change_marker, * 
@@ -257,7 +263,7 @@ AE_ACCOUNTING_DATE::datetime AE_ACCOUNTING_DATE, -- Movement Date
 AE_POS_NEG,
 AE_DIMENSION_1, 
 substring(AE_DIMENSION_2,1,4) AE_DIMENSION_2, -- Uw Year
-substring(AE_DIMENSION_3,1,4) AS_DIMENSION_3, -- Acc Year
+substring(AE_DIMENSION_3,1,4) AE_DIMENSION_3, -- Acc Year
 co.major as AE_DIMENSION_4, -- Mythic "COB" Nonsense
 tmm.targetmarket as AE_DIMENSION_5, -- Target Market
 AE_DIMENSION_6, -- Intercompany
@@ -331,7 +337,7 @@ from cte_lagged l
    join {{ref('are_sample_cobs')}} co on
       l.contract_clicode = co.eclipse_policy_reference
 
-    join {{ref('targetmarket_mapping')}} tmm on 
+    join distinct_targmarkets tmm on 
        tmm.lineref = l.contract_clicode
 
 where lagged_change_marker != change_marker
