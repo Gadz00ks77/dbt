@@ -8,9 +8,8 @@
 
 --SOURCE: CURATED SNAPSHOT TABLE
 
-
-
 {{ config(materialized='table') }}
+
 with cte_date_all as
 (
   select 

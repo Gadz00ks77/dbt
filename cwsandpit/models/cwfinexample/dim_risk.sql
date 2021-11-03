@@ -101,5 +101,5 @@ v.renewedfromref as new_or_renewal,
 v.periodtype as period_basis
 from 
 cte_valids v
-  join {{ref('placingbasismapping')}} pl 
+  left join {{ref('placingbasismapping')}} pl 
     on v.placingtype = pl.placingbasiscode

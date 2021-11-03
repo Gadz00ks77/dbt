@@ -92,3 +92,12 @@ models:
           tests: 
             - unique
             - not_null
+  
+    - name: fct_trans_periodic_snapshot
+      description: "A Summarised Premium Snapshot"
+      columns:
+        - name: periodic_key
+          description: "Primary Key"
+          tests: 
+            - unique
+            - not_null  

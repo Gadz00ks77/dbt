@@ -2,7 +2,6 @@
 
 --Flattens to one row per policy per day.
 
-
 with cte_source as
 (
 select actual_date,policyid,lloydsbrokerid,brokerrole

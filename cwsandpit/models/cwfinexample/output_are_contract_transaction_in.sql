@@ -130,8 +130,8 @@ from
     join dim_accounting_periods ap
         on ws.accounting_period_key = ap.accounting_period_key
 
-    join {{ref('are_sample')}} are_sample
-        on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
+    --join {{ref('are_sample')}} are_sample
+    --    on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
 
 group by 
 
@@ -334,10 +334,10 @@ LOCAL_CU_CURRENCY_ISO_CODE
 
 from cte_lagged l
 
-   join {{ref('are_sample_cobs')}} co on
+   left join {{ref('are_sample_cobs')}} co on            
       l.contract_clicode = co.eclipse_policy_reference
 
-    join distinct_targmarkets tmm on 
+   left join distinct_targmarkets tmm on 
        tmm.lineref = l.contract_clicode
 
 where lagged_change_marker != change_marker
