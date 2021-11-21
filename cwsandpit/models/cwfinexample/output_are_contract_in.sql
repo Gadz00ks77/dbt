@@ -21,7 +21,7 @@ null as MESSAGE_ID,
 null as REMITTING_SYSTEM_ID,
 null as ARRIVAL_TIME,
 il.policy_reference as CONTRACT_CLICODE,
-null as PRODUCT_CLICODE,
+'DEFAULT' as PRODUCT_CLICODE,
 null as BO_BOOK_CLICODE,
 null as DESCRIPTION,
 il.policy_reference as CONTRACT_NUMBER,
@@ -162,8 +162,16 @@ from
     join dim_accounting_periods ap
         on ws.accounting_period_key = ap.accounting_period_key
 
-    join {{ref('are_sample')}} are_sample
-        on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
+    where il.policy_reference in (
+                'DA262H21A000',
+                'DB174V21A000',
+                'AD952Z20A050',
+                'AA052F21B000',
+                'AK719Z20A001'
+    )
+
+--    join {{ref('are_sample')}} are_sample
+--        on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
 
 group by 
 
@@ -247,9 +255,9 @@ from cte_informat i
     join {{ref('dim_date')}} ap 
         on snapshot_date::text = ap.date::text
 
-where 
-        --contract_clicode = 'BB142S20A000' and
-        ap.day_of_month = 1
+--where 
+        --ap.day_of_month = 1 -- this is removed as I want to produce one "specific date" snapshot
+        
 
 ),
 

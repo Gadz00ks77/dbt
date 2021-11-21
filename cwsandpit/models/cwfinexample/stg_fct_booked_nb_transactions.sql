@@ -200,7 +200,7 @@ from lag_vals lc
    amtpct,
    deductionind,
    contraind,
-   transaction_date,
+   transaction_date::date as transaction_date,
    inceptiondate,
    expirydate,
    yoa,

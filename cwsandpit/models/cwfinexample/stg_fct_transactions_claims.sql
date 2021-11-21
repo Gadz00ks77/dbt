@@ -8,8 +8,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Claim Paid - Market' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Paid - Market' as Transaction_SubEvent,
        'Indemnity' as Category_Description,
        'Claim' as Parent_Category_Group,
        m.marketpaidthistimeindemorigccy as transaction_original,
@@ -31,8 +31,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Claim Paid - Market' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Paid - Market' as Transaction_SubEvent,
        'Fee' as Category_Description,
        'Claim' as Parent_Category_Group,
        m.marketpaidthistimefeeorigccy as transaction_original,
@@ -50,8 +50,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Claim Paid - Share' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Paid - Share' as Transaction_SubEvent,
        'Indemnity' as Category_Description,
        'Claim' as Parent_Category_Group,
        m.marketpaidthistimeindemorigccy*(signedline/100) as transaction_original,
@@ -73,8 +73,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Claim Paid - Share' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Paid - Share' as Transaction_SubEvent,
        'Fee' as Category_Description,
        'Claim' as Parent_Category_Group,
        m.marketpaidthistimefeeorigccy*(signedline/100) as transaction_original,
@@ -96,8 +96,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Outstanding - Market Movement' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Outstanding Movement - Market' as Transaction_SubEvent,
        'Indemnity' as Category_Description,
        'Claim' as Parent_Category_Group,
        ifnull(lag(marketosindemorigccy) ignore nulls over(partition by claimid, origccyiso order by movementid),0) as transaction_lag_original,
@@ -117,8 +117,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Outstanding - Market Movement' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Outstanding Movement - Market' as Transaction_SubEvent,
        'Fee' as Category_Description,
        'Claim' as Parent_Category_Group,
        ifnull(lag(marketosfeeorigccy) ignore nulls over(partition by claimid, origccyiso order by movementid),0) as transaction_lag_original,
@@ -139,8 +139,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Outstanding - Share Movement' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Outstanding Movement - Share' as Transaction_SubEvent,
        'Indemnity' as Category_Description,
        'Claim' as Parent_Category_Group,
        ifnull(lag(marketosindemorigccy) ignore nulls over(partition by m.claimid, origccyiso order by movementid),0) as transaction_lag_original,
@@ -165,8 +165,8 @@ with market_paid_indem as (
        m.movementdate::date as movementdateonly,
        m.origccyiso,
        m.settccyiso,
-       'Inward Claim' as Transaction_Event,
-       'Outstanding - Share Movement' as Transaction_SubEvent,
+       'Inward Claims' as Transaction_Event,
+       'Outstanding Movement - Share' as Transaction_SubEvent,
        'Fee' as Category_Description,
        'Claim' as Parent_Category_Group,
        ifnull(lag(marketosfeeorigccy) ignore nulls over(partition by m.claimid, origccyiso order by movementid),0) as transaction_lag_original,
@@ -264,9 +264,13 @@ cte_union as (
         u.claimid,
         cl.claimperil,
         ifnull(pl.policyid,lead(pl.policyid) ignore nulls over (partition by u.claimid order by movementdateonly)) as policyid, --due to misalignments on the ingestion points of files (or the updates of associated rows) take the first applicable value from the associated record. This is valid. (No Policy = No Claim)
+        ifnull(pl.class1,lead(pl.class1) ignore nulls over (partition by u.claimid order by movementdateonly)) as class1,
+        ifnull(pl.class2,lead(pl.class2) ignore nulls over (partition by u.claimid order by movementdateonly)) as class2,
+        ifnull(pl.class3,lead(pl.class3) ignore nulls over (partition by u.claimid order by movementdateonly)) as class3,
+        ifnull(pl.class4,lead(pl.class4) ignore nulls over (partition by u.claimid order by movementdateonly)) as class4,
         ifnull(polline.synd,lead(polline.synd) ignore nulls over (partition by u.claimid order by movementdateonly)) as synd,
         ifnull(polline.producingteam,lead(polline.producingteam) ignore nulls over (partition by u.claimid order by movementdateonly)) as producingteam,
-        ifnull(cli.policylineid, lead(cli.policylineid) ignore nulls over (partition by u.claimid order by movementdateonly)) as policylineid,
+        ifnull(polline.policylineid, lead(polline.policylineid) ignore nulls over (partition by u.claimid order by movementdateonly)) as policylineid,
         ifnull(pl.inceptiondate, lead(pl.inceptiondate) ignore nulls over (partition by u.claimid order by movementdateonly)) as inceptiondate,
         ifnull(pl.expirydate,lead(pl.expirydate) ignore nulls over (partition by u.claimid order by movementdateonly)) as expirydate,
         ifnull(pl.yoa, lead(pl.yoa) ignore nulls over (partition by u.claimid order by movementdateonly)) as yoa,
@@ -306,9 +310,6 @@ cte_union as (
                 on cli.claimid = cl.claimid
                 and cli.actual_date = cl.actual_date
 
-            left join {{ref('stg_policylines')}} polline 
-                on cli.policylineid = polline.policylineid 
-                and cli.actual_date = polline.actual_date
 
             left join {{ref('stg_claimevent')}} ce
                 on ce.claimeventid = cli.claimeventid
@@ -321,6 +322,10 @@ cte_union as (
             left join {{ref('stg_policies')}} pl 
                 on pl.policyid = clpl.policyid 
                 and clpl.actual_date = pl.actual_date
+
+            left join {{ref('stg_policylines')}} polline 
+                on pl.policyid = polline.policyid 
+                and pl.actual_date = polline.actual_date
 
             left join {{ ref('stg_policy_organisations_pivoted')}} org_piv 
                 on pl.policyid = org_piv.policyid 

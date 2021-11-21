@@ -10,11 +10,12 @@ tr.is_addition,
 'n/a' as has_contra,
 tr.amtpct as transaction_rate,
 tr.deductionind as transaction_basis,
-tr.transaction_date,
+tr.transaction_date::date as transaction_date,
 categories.financial_category_key,
 t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
+cob.class_of_business_key,
 sha2('n/a') as claim_key,
 sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
@@ -49,6 +50,12 @@ from {{ref('stg_fct_written_transactions')}} tr
     left join {{ref('dim_transaction_events')}} t_events
         on lkp.transaction_event = t_events.transaction_event
         and lkp.transaction_sub_event = t_events.transaction_sub_event
+
+    left join dim_class_of_business cob 
+        on tr.class4 = cob.tier_1_code
+        and tr.class1 = cob.tier_2_code
+        and tr.class3 = cob.tier_3_code
+        and tr.transaction_date between cob.valid_from and cob.valid_to
         
     left join {{ref('dim_risk')}} r
         on tr.policyid = r.risk_nk
@@ -106,7 +113,7 @@ from {{ref('stg_fct_written_transactions')}} tr
         and tr.transaction_date between pre.effective_from and pre.effective_to
 
     left join dim_accounting_periods ap  
-        on tr.transaction_date::text = ap.date
+        on tr.transaction_date::date::text = ap.date
 
     left join {{ref('dim_currencies') }} orig_ccy  
         on tr.origccyiso = orig_ccy.isochar_code
@@ -115,7 +122,6 @@ from {{ref('stg_fct_written_transactions')}} tr
     left join {{ref('dim_currencies') }} sett_ccy  
         on tr.settccyiso = sett_ccy.isochar_code
         and tr.transaction_date between sett_ccy.effective_from and sett_ccy.effective_to
-
 
 union
 
@@ -136,6 +142,7 @@ categories.financial_category_key,
 t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
+cob.class_of_business_key,
 c.claim_key,
 ifnull(pd.peril_key,sha2('Unknown')) as claim_peril_key,
 le.loss_event_key,
@@ -164,6 +171,12 @@ from {{ref('stg_fct_transactions_claims')}} tr
     left join {{ref('dim_financial_categories')}} categories
         on tr.Category_Description::text = categories.sub_category
         and categories.parent_category = 'Claims'
+
+    left join dim_class_of_business cob 
+        on tr.class4 = cob.tier_1_code
+        and tr.class1 = cob.tier_2_code
+        and tr.class3 = cob.tier_3_code
+        and tr.movementdateonly between cob.valid_from and cob.valid_to
 
     left join {{ref('dim_transaction_events')}} t_events
         on tr.transaction_event = t_events.transaction_event
@@ -248,6 +261,7 @@ from {{ref('stg_fct_transactions_claims')}} tr
         on tr.settccyiso = sett_ccy.isochar_code
         and tr.movementdateonly  between sett_ccy.effective_from and sett_ccy.effective_to
 
+
 union
 
 select 
@@ -267,6 +281,7 @@ categories.financial_category_key,
 t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
+cob.class_of_business_key,
 sha2('n/a') as claim_key,
 sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
@@ -301,7 +316,13 @@ from {{ref('stg_fct_booked_nb_transactions')}} tr
     left join {{ref('dim_transaction_events')}} t_events
         on lkp.transaction_event = t_events.transaction_event
         and lkp.transaction_sub_event = t_events.transaction_sub_event
-        
+
+    left join dim_class_of_business cob 
+        on tr.class4 = cob.tier_1_code
+        and tr.class1 = cob.tier_2_code
+        and tr.class3 = cob.tier_3_code
+        and tr.transaction_date between cob.valid_from and cob.valid_to
+    
     left join {{ref('dim_risk')}} r
         on tr.policyid = r.risk_nk
         and r.source_system = tr.system_source --stupid
@@ -369,6 +390,9 @@ from {{ref('stg_fct_booked_nb_transactions')}} tr
         and tr.transaction_date between sett_ccy.effective_from and sett_ccy.effective_to
 
 
+where 
+transaction_orig_amt !=0 or transaction_sett_amt !=0
+
 union
 
 select 
@@ -388,6 +412,7 @@ categories.financial_category_key,
 t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
+cob.class_of_business_key,
 sha2('n/a') as claim_key,
 sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
@@ -420,14 +445,20 @@ from {{ref('stg_fct_booked_b_transactions')}} tr
         on categories.sub_category = lkp.lookup_fincategory
         
     left join {{ref('dim_transaction_events')}} t_events
-        on 'Booked' = t_events.transaction_event
+        on 'Inward Booked' = t_events.transaction_event
         and ifnull(lkp.transaction_sub_event,'Other') = t_events.transaction_sub_event 
         
     left join {{ref('dim_risk')}} r
         on tr.policyid = r.risk_nk
         and r.source_system = tr.system_source --stupid
         and tr.transaction_date between r.effective_from and r.effective_to 
-    
+
+    left join dim_class_of_business cob 
+        on tr.class4 = cob.tier_1_code
+        and tr.class1 = cob.tier_2_code
+        and tr.class3 = cob.tier_3_code
+        and tr.transaction_date between cob.valid_from and cob.valid_to
+
     left join {{ref('dim_insured_line')}} li
         on tr.policylineid::text = li.insured_line_nk
         and r.source_system = tr.system_source 
@@ -489,6 +520,10 @@ from {{ref('stg_fct_booked_b_transactions')}} tr
         on tr.ledgerccyiso = sett_ccy.isochar_code
         and tr.transaction_date between sett_ccy.effective_from and sett_ccy.effective_to
 
+
+where 
+transaction_orig_amt !=0 or transaction_ledger_amt !=0
+
 union
 
 select 
@@ -508,6 +543,7 @@ categories.financial_category_key,
 t_events.transaction_event_key,
 ap.accounting_period_key,
 r.risk_key,
+cob.class_of_business_key,
 sha2('n/a') as claim_key,
 sha2('n/a') as claim_peril_key,
 sha2('n/a') as loss_event_key,
@@ -540,7 +576,7 @@ from {{ref('stg_fct_paid_b_transactions')}} tr
     --    on tr.instalmenttype = lkp.lookup_value
         
     left join {{ref('dim_transaction_events')}} t_events
-        on 'Received' = t_events.transaction_event
+        on 'Inward Cash Allocated' = t_events.transaction_event
         and 'Other' = t_events.transaction_sub_event -- the Swing / Reinstatement are established from InstalmentTypes and you can't (reliably) get that for Bureau policies.
         
     left join {{ref('dim_risk')}} r
@@ -598,6 +634,12 @@ from {{ref('stg_fct_paid_b_transactions')}} tr
         and pre.source_system = tr.system_source
         and tr.transaction_date between pre.effective_from and pre.effective_to
 
+    left join dim_class_of_business cob 
+        on tr.class4 = cob.tier_1_code
+        and tr.class1 = cob.tier_2_code
+        and tr.class3 = cob.tier_3_code
+        and tr.transaction_date between cob.valid_from and cob.valid_to
+
     left join dim_accounting_periods ap  
         on tr.transaction_date::text = ap.date
 
@@ -608,3 +650,6 @@ from {{ref('stg_fct_paid_b_transactions')}} tr
     left join {{ref('dim_currencies')}} sett_ccy  
         on tr.ledgerccyiso = sett_ccy.isochar_code
         and tr.transaction_date between sett_ccy.effective_from and sett_ccy.effective_to
+
+where 
+transaction_orig_amt !=0 or transaction_ledger_amt !=0

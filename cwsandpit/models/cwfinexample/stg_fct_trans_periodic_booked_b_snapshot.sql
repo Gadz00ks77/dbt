@@ -94,6 +94,10 @@ sett_ccy.currency_key as sett_ccy_key,
 last_value(po.inceptiondate::date) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as inception_date_key,
 last_value(po.expirydate::date) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as expiry_date_key,
 case when last_value(po.yoa) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) is null then null else (last_value(po.yoa) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date)||'-01'||'-01')  end uw_year_key,
+last_value(po.class1) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as class1,
+last_value(po.class2) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as class2,
+last_value(po.class3) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as class3,
+last_value(po.class4) over (partition by cu.snapshot_date,r.risk_key order by cu.snapshot_date) as class4,
 is_addition,  
 ifnull(pa.party_key,sha2('Unknown')) as assured_party_key,
 ifnull(pr.party_key,sha2('Unknown')) as reassured_party_key,
@@ -124,7 +128,6 @@ cte_cumulative cu
     left join {{ref('stg_policies')}} po 
         on cu.policyid = po.policyid
         and cu.snapshot_date = po.actual_date
-
 
     left join {{ref('dim_financial_categories')}} categories
         on cu.ftcr_fintranscategoryid::text = categories.nk_financial_category

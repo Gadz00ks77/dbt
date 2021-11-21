@@ -3,7 +3,7 @@ select
     psss.policysettschedshareid,
     pss.policysettschedid,
     pss.policyid,
-    pss.actual_date,
+    case when psss.actual_date > psss.lastupd then psss.actual_date else psss.lastupd end as actual_date,
     pss.instalmentnum,
     pss.instalmenttype,
     pss.roe,

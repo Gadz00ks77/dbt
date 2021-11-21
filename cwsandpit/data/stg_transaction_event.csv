@@ -1,14 +1,14 @@
 ﻿TRANSACTION_EVENT_CODE,TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
-WO,Written,Other
-WR,Written,Reinstatement
-WS,Written,Swing
-ICOS,Inward Claim,Outstanding - Share Movement
-ICPM,Inward Claim,Claim Paid - Market
-ICPS,Inward Claim,Claim Paid - Share
-ICOM,Inward Claim,Outstanding - Market Movement
-BO,Booked,Other
-BR,Booked,Reinstatement
-BS,Booked,Swing
-RO,Received,Other
-RR,Received,Reinstatement
-RS,Received,Swing
+IWO,Inward Written,Other
+IWR,Inward Written,Reinstatement
+IWS,Inward Written,Swing
+ICOS,Inward Claims,Outstanding Movement - Share
+ICPM,Inward Claims,Paid - Market
+ICPS,Inward Claims,Paid - Share
+ICOM,Inward Claims,Outstanding Movement - Market
+IBO,Inward Booked,Other
+IBR,Inward Booked,Reinstatement
+IBS,Inward Booked,Swing
+ICAO,Inward Cash Allocated,Other
+ICAR,Inward Cash Allocated,Reinstatement
+ICAS,Inward Cash Allocated,Swing

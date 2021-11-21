@@ -22,9 +22,17 @@ p.canceldate,
 p.policytype,
 p.bureausettledind,
 p.renewedfromref,
+p.renewedtoref,
 p.periodtype,
 p.actual_date,
 p.placingtype,
+p.fullterminceptiondate,
+p.fulltermexpirydate,
+p.fulltermind,
+p.fulltermperiod,
+p.fulltermresignind,
+p.inceptiondate,
+p.expirydate,
 ifnull(p.layernum::text,'0')::text ||
 --ifnull(pp.basis::text,'0')::text ||
 ifnull(p.instalmentperiod::text,'0')::text ||
@@ -36,7 +44,13 @@ ifnull(p.canceldate::text,'0')::text ||
 ifnull(p.placingtype::text,'0')::text ||
 ifnull(p.bureausettledind::text,'0')::text ||
 ifnull(p.renewedfromref::text,'0')::text ||
-ifnull(p.periodtype::text,'0')::text as change_key,
+ifnull(p.renewedtoref::text,'0')::text ||
+ifnull(p.fullterminceptiondate::text,'0')::text ||
+ifnull(p.fulltermexpirydate::text,'0')::text ||
+ifnull(p.fulltermind::text,'0')::text ||
+ifnull(p.fulltermperiod::text,'0')::text ||
+ifnull(p.fulltermresignind::text,'0')::text
+as change_key,
 conditional_change_event(
 ifnull(p.layernum::text,'0')::text ||
 --ifnull(pp.basis::text,'0')::text ||
@@ -49,7 +63,13 @@ ifnull(p.canceldate::text,'0')::text ||
 ifnull(p.placingtype::text,'0')::text ||
 ifnull(p.bureausettledind::text,'0')::text ||
 ifnull(p.renewedfromref::text,'0')::text ||
-ifnull(p.periodtype::text,'0')::text
+ifnull(p.renewedtoref::text,'0')::text ||
+ifnull(p.periodtype::text,'0')::text ||
+ifnull(p.fullterminceptiondate::text,'0')::text ||
+ifnull(p.fulltermexpirydate::text,'0')::text ||
+ifnull(p.fulltermind::text,'0')::text ||
+ifnull(p.fulltermperiod::text,'0')::text ||
+ifnull(p.fulltermresignind::text,'0')::text
 ) over (partition by p.policyid order by p.actual_date) as change_num
 
 from {{ ref('stg_policies') }}  p 
@@ -98,7 +118,16 @@ pl.contracttypecode as contract_type,
 v.bureausettledind as is_bureau,
 v.policystatus as risk_status,
 v.renewedfromref as new_or_renewal,
-v.periodtype as period_basis
+v.periodtype as period_basis,
+case when 
+  fullterminceptiondate is not null 
+  and renewedfromref is not null 
+  and fulltermresignind = 1 
+  and datediff(m,inceptiondate,expirydate)<=12
+  then 'MYP Non Cancellable Resign'
+  else
+  'Other'
+  end as MYP_Marker
 from 
 cte_valids v
   left join {{ref('placingbasismapping')}} pl 

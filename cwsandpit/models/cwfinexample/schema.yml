@@ -75,14 +75,14 @@ models:
             - unique
             - not_null
 
-    - name: fct_periodic_premium_snapshot
-      description: "A Summarised Premium Snapshot"
-      columns:
-        - name: periodic_key
-          description: "The primary key for this table"
-          tests: 
-            - unique
-            - not_null
+    # - name: fct_periodic_premium_snapshot
+    #   description: "A Summarised Premium Snapshot"
+    #   columns:
+    #     - name: periodic_key
+    #       description: "The primary key for this table"
+    #       tests: 
+    #         - unique
+    #         - not_null
 
     - name: stg_nonbureau_booked_premdeduct_alldays
       description: "A Summarised Premium Snapshot"

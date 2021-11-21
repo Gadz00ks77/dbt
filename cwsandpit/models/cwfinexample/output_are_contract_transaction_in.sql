@@ -53,7 +53,7 @@ NULL                    as CONTRACT_PART_CLICODE,
 NULL                    as TRANSACTION_TYPE_CLICODE,
 NULL                    as BO_BOOK_CLICODE,
 NULL                    as IPE_ENTITY_CLIENT_CODE,
-le.party_name           as PL_PARTY_LEGAL_CLICODE, -- Legal Entity
+case when le.party_name = 'CVIU' then 130 else 120 end as PL_PARTY_LEGAL_CLICODE, -- Legal Entity
 NULL                    as PBU_PARTY_BUS_CLIENT_CODE,
 sc.isochar_code         as CU_CURRENCY_ISO_CODE, -- Settlement Currency Code
 NULL                    as GROSS_AMOUNT,
@@ -129,6 +129,14 @@ from
 
     join dim_accounting_periods ap
         on ws.accounting_period_key = ap.accounting_period_key
+
+    where il.policy_reference in (
+                'DA262H21A000',
+                'DB174V21A000',
+                'AD952Z20A050',
+                'AA052F21B000',
+                'AK719Z20A001'
+    )
 
     --join {{ref('are_sample')}} are_sample
     --    on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
@@ -220,9 +228,10 @@ from cte_informat i
     join {{ref('dim_date')}} ap 
         on ae_accounting_date::text = ap.date::text
 
-where 
-        --contract_clicode = 'BB142S20A000' and
-        ap.day_of_month = 1
+--where 
+        --ap.day_of_month = 1 -- this is removed as I want to produce one "specific date" snapshot
+    
+
 
 order by 
         accounting_period
@@ -305,7 +314,7 @@ CLIENT_TEXT4, -- Financial Category
 CLIENT_TEXT5, -- Financial Sub Category
 CLIENT_TEXT6, -- Is Addition Marker
 CLIENT_TEXT7, -- Peril Code (N/A for Premium)
-case when change_pol_level = 1 then 'New' Else 'Not New' end as CLIENT_TEXT8, -- New Policy Marker
+CLIENT_TEXT8, --case when change_pol_level = 1 then 'New' Else 'Not New' end as CLIENT_TEXT8, -- New Policy Marker -- deprecated
 CLIENT_TEXT9, -- Original Currency Code
 CLIENT_TEXT10,
 CLIENT_TEXT11,

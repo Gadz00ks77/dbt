@@ -1,13 +1,13 @@
 ﻿EVENT_SOURCE,LOOKUP_VALUE,TRANSACTION_EVENT,TRANSACTION_SUB_EVENT
-written,RTP,Written,Other
-written,RTT,Written,Other
-written,BDX,Written,Other
-written,NCB,Written,Other
-written,PAY,Written,Other
-written,ADJ,Written,Other
-written,PA,Written,Reinstatement
-written,RPP,Written,Reinstatement
-written,AP,Written,Other
-written,PM,Written,Other
-written,COM,Written,Other
-written,SWP,Written,Swing
+written,RTP,Inward Written,Other
+written,RTT,Inward Written,Other
+written,BDX,Inward Written,Other
+written,NCB,Inward Written,Other
+written,PAY,Inward Written,Other
+written,ADJ,Inward Written,Other
+written,PA,Inward Written,Reinstatement
+written,RPP,Inward Written,Reinstatement
+written,AP,Inward Written,Other
+written,PM,Inward Written,Other
+written,COM,Inward Written,Other
+written,SWP,Inward Written,Swing
