@@ -32,14 +32,14 @@ NULL                    as AE_POS_NEG,
 NULL                    as AE_DIMENSION_1, 
 ws.uw_year_key          as AE_DIMENSION_2, -- Uw Year
 ws.date_of_loss_key     as AE_DIMENSION_3, -- Acc Year
-'TBC'                   as AE_DIMENSION_4, -- Mythic "COB" Nonsense
+cob.tier_1_code         as AE_DIMENSION_4, -- Mythic "COB" Nonsense
 'TBC'                   as AE_DIMENSION_5, -- Target Market
 'TBC'                   as AE_DIMENSION_6, -- Intercompany
 r.placing_basis         as AE_DIMENSION_7, -- Placing Basis
 r.contract_type         as AE_DIMENSION_8, -- Contract Type
 NULL                    as AE_DIMENSION_9, 
 NULL                    as AE_DIMENSION_10,
-'TBC'                   as AE_DIMENSION_11, -- More "COB" Stuff
+cob.tier_3_code         as AE_DIMENSION_11, -- More "COB" Stuff
 NULL                    as AE_DIMENSION_12,
 'TBC'                   as AE_DIMENSION_13, -- RI Contract
 'TBC'                   as AE_DIMENSION_14, -- Reinsurer
@@ -109,6 +109,9 @@ from
     join {{ref('dim_perils')}} pd  
         on ws.claim_peril_key = pd.peril_key
 
+    join dim_class_of_business cob 
+        on ws.class_of_business_key = cob.class_of_business_key
+
     join {{ref('dim_risk')}} r    
         on r.risk_key = ws.risk_key
 
@@ -162,7 +165,9 @@ group by
     pd.peril_code,
     oc.isochar_code,
     il.line_status,
-    ws.date_of_loss_key
+    ws.date_of_loss_key,
+    cob.tier_1_code,
+    cob.tier_3_code
 
 ), cte_capture_change as (
 select 
@@ -273,14 +278,14 @@ AE_POS_NEG,
 AE_DIMENSION_1, 
 substring(AE_DIMENSION_2,1,4) AE_DIMENSION_2, -- Uw Year
 substring(AE_DIMENSION_3,1,4) AE_DIMENSION_3, -- Acc Year
-co.major as AE_DIMENSION_4, -- Mythic "COB" Nonsense
+AE_DIMENSION_4, -- Mythic "COB" Nonsense
 tmm.targetmarket as AE_DIMENSION_5, -- Target Market
 AE_DIMENSION_6, -- Intercompany
 AE_DIMENSION_7, -- Placing Basis
 AE_DIMENSION_8, -- Contract Type
 AE_DIMENSION_9, 
 AE_DIMENSION_10,
-co.class_code as AE_DIMENSION_11, -- More "COB" Stuff
+AE_DIMENSION_11, -- More "COB" Stuff
 AE_DIMENSION_12,
 AE_DIMENSION_13, -- RI Contract
 AE_DIMENSION_14, -- Reinsurer
@@ -343,8 +348,8 @@ LOCAL_CU_CURRENCY_ISO_CODE
 
 from cte_lagged l
 
-   left join {{ref('are_sample_cobs')}} co on            
-      l.contract_clicode = co.eclipse_policy_reference
+   --left join {{ref('are_sample_cobs')}} co on            
+   --   l.contract_clicode = co.eclipse_policy_reference
 
    left join distinct_targmarkets tmm on 
        tmm.lineref = l.contract_clicode

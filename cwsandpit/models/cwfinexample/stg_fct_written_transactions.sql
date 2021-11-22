@@ -29,8 +29,8 @@ u.Financial_Sub_Category,
 u.instalmentnum,
 u.instalmenttype,
 u.linestatus,
-u.origgross,
-u.settgross,
+case when u.linestatus in ('Written','Signed','Canc') then ifnull(u.origgross,u.settgross*u.roe) else 0 end origgross,
+case when u.linestatus in ('Written','Signed','Canc') then u.settgross else 0 end settgross,
 u.origccyiso,
 u.settccyiso,
 u.roe,
@@ -56,8 +56,8 @@ u.class4
 
 from {{ref('stg_policy_settlement_union')}} u
 
-where 
-   u.linestatus in ('Written','Signed','Canc')
+--where 
+--   u.linestatus in ('Written','Signed','Canc')
   )
   
   ,
@@ -87,6 +87,7 @@ where
    change_key,
    policyid,
    policylineid,
+   linestatus,
    policysettschedid,
    policysettschedshareid,
    settlementschedulesharedeductionid,
@@ -140,6 +141,7 @@ where
    change_key,
    policyid,
    policylineid,
+   linestatus,
    policysettschedid,
    policysettschedshareid,
    settlementschedulesharedeductionid,
@@ -170,7 +172,11 @@ where
    instalmenttype,
    roe,
    origccyiso,
-   settccyiso
+   settccyiso,
+   lagged_origgross,
+   origgross,
+   lagged_settgross,
+   settgross
    ,origgross - lagged_origgross as transaction_orig_gross_amt
    ,settgross - lagged_settgross as transaction_sett_gross_amt
    
@@ -189,6 +195,7 @@ where
    change_key,
    policyid,
    policylineid,
+   linestatus,
    policysettschedid,
    policysettschedshareid,
    settlementschedulesharedeductionid,
@@ -220,6 +227,10 @@ where
    roe,
    origccyiso,
    settccyiso,
+  --  lagged_origgross,
+  --  origgross,
+  --  lagged_settgross,
+  --  settgross,
    ifnull(transaction_orig_gross_amt,transaction_sett_gross_amt*roe) as transaction_orig_gross_amt,
    transaction_sett_gross_amt
   
