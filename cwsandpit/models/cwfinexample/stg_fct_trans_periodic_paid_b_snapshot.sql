@@ -130,7 +130,7 @@ cte_cumulative cu
         and cu.snapshot_date = po.actual_date
         
     left join {{ref('dim_transaction_events')}} t_events
-        on 'Received' = t_events.transaction_event
+        on 'Inward Cash Allocated' = t_events.transaction_event
         and 'Other' = t_events.transaction_sub_event -- the Swing / Reinstatement are established from InstalmentTypes and you can't (reliably) get that for Bureau policies.
 
     left join {{ref('dim_financial_categories')}} categories

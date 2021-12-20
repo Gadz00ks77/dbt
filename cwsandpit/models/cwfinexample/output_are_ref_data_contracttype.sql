@@ -1,0 +1,30 @@
+select distinct 
+
+'CONTRACT_TYPE'         as SRGC_GCT_CODE_TYPE_ID,
+r.ContractTypeCode      as SRGC_CLIENT_CODE,
+NULL                    as SRGC_CLIENT_TEXT1,
+NULL                    as SRGC_CLIENT_TEXT2,
+NULL                    as SRGC_CLIENT_TEXT3,
+NULL                    as SRGC_CLIENT_TEXT4,
+NULL                    as SRGC_CLIENT_TEXT5,
+NULL                    as SRGC_CLIENT_TEXT6,
+NULL                    as SRGC_CLIENT_TEXT7,
+NULL                    as SRGC_CLIENT_TEXT8,
+NULL                    as SRGC_CLIENT_TEXT9,
+NULL                    as SRGC_CLIENT_TEXT10,
+r.ContractTypevalue     as SRGC_DESCRIPTION,
+'A'                    as SRGC_ACTIVE,
+NULL                    as SRGC_AUTH_BY,
+NULL                     as SRGC_AUTH_STATUS,
+'1901-01-01'::date      as SRGC_VALID_FROM,
+'9999-12-31'::date                    as SRGC_VALID_TO,
+NULL                    as SRGC_DELETE_TIME,
+NULL                    as EVENT_ERROR_STRING,
+NULL                    as PROCESS_ID,
+NULL                    as SUB_SYSTEM_ID,
+NULL                    as MESSAGE_ID,
+NULL                    as REMITTING_SYSTEM_ID,
+NULL                    as ARRIVAL_TIME,
+1                   as LPG_ID
+
+from {{ref('placingbasismapping')}} r
