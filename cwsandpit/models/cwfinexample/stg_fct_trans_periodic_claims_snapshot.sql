@@ -22,7 +22,7 @@ select
   last_value(tr.assured) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_assured,
   last_value(tr.lossdatefrom) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_lossdatefrom,
   last_value(tr.lossdateto) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_lossdateto,
-  last_value(tr.claimperil) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_claimperil,
+--  last_value(tr.claimperil) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_claimperil,
   last_value(tr.reassured) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_reassured,
   last_value(tr.client) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_client,
   last_value(tr.synd) over (partition by tr.snapshot_date,tr.claimid order by tr.movementdateonly) as last_synd,
@@ -42,7 +42,7 @@ select
 snapshot_date,
 'eclipse' as source_system,
 tr.claimid,
-tr.last_claimperil as claimperil,
+--tr.last_claimperil as claimperil,
 tr.policyid,
 tr.policylineid,
 'N' as is_addition,
@@ -75,7 +75,7 @@ snapshot_date ,
 tr.policyid,
 tr.policylineid,
 tr.claimid,  
-tr.last_claimperil,
+--tr.last_claimperil,
 tr.last_lossdatefrom,
 tr.last_lossdateto,
 tr.Transaction_Event,
@@ -96,7 +96,9 @@ tr.last_retailer
 -- tr.last_expiry_date,
 -- (tr.last_yoa||'-01'||'-01') 
 
-)
+),
+
+cte_almost as (
 
 select
 'Inward Claims' as measure_source, 
@@ -105,7 +107,9 @@ ap.accounting_period_key,
 cu.snapshot_date,
 r.risk_key,
 cl.claim_key,
-pd.peril_key as claim_peril_key,
+cu.claimid,
+--ifnull(pd.peril_key,sha2('Unknown')) as claim_peril_key,
+ifnull(scl.claimperil,lag(scl.claimperil) ignore nulls over (partition by scl.claimref order by scl.actual_date)) as claim_peril,
 li.insured_line_key,
 cu.lossdatefrom,
 cu.lossdateto,
@@ -176,6 +180,14 @@ cte_cumulative cu
         and cl.source_system = cu.source_system --i know, i know
         and cu.snapshot_date between cl.effective_from and cl.effective_to
 
+    left join {{ref('stg_claim_eclipse_mapping')}} eclm
+                on cu.claimid::text = eclm.eclipseclaimid::text
+                and cu.snapshot_date = eclm.actual_date
+    
+    left join {{ref('stg_claim_sequel_claim')}} scl
+                on eclm.claimid = scl.claimref
+                and eclm.actual_date = scl.actual_date
+
     left join {{ref('dim_parties')}} pc
         on cu.client::text = pc.party_nk
         and pc.source_system = cu.source_system --i know, i know
@@ -186,8 +198,8 @@ cte_cumulative cu
         and pe.source_system = cu.source_system --i know, i know
         and cu.snapshot_date between pe.effective_from and pe.effective_to
 
-    left join {{ref('dim_perils')}} pd 
-        on cu.claimperil = pd.peril_nk
+    -- left join {{ref('dim_perils')}} pd 
+    --     on  = pd.peril_nk
         
     left join {{ref('dim_parties')}} pt
         on cu.producingteam::text = pt.party_nk
@@ -220,6 +232,11 @@ cte_cumulative cu
         on cu.settccyiso = sett_ccy.isochar_code
         and cu.snapshot_date between sett_ccy.effective_from and sett_ccy.effective_to
 
---where parent_category = 'Premium'
+)
 
---order by snapshot_date
+    select a.*
+    , ifnull(pd.peril_key,sha2('Unknown')) as claim_peril_key
+    from cte_almost a
+
+    left join {{ref('dim_perils')}} pd 
+         on a.claim_peril  = pd.peril_nk

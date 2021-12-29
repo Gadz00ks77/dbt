@@ -302,14 +302,17 @@ cte_union as (
                 on u.claimid = cl.claimid
                 and cl.actual_date = u.movementdateonly
 
-            left join {{ref('stg_claim_sequel_claim')}} scl 
-                on cl.claimid = scl.oldclaimref
-                and cl.actual_date = scl.actual_date
+            left join {{ref('stg_claim_eclipse_mapping')}} eclm
+                        on cl.claimid::text = eclm.eclipseclaimid::text
+                        and cl.actual_date = eclm.actual_date
+
+            left join {{ref('stg_claim_sequel_claim')}} scl
+                        on eclm.claimid = scl.claimref
+                        and eclm.actual_date = scl.actual_date
 
             left join {{ref('stg_claimline')}} cli
                 on cli.claimid = cl.claimid
                 and cli.actual_date = cl.actual_date
-
 
             left join {{ref('stg_claimevent')}} ce
                 on ce.claimeventid = cli.claimeventid

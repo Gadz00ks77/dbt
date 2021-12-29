@@ -12,3 +12,15 @@ IBS,Inward Booked,Swing
 ICAO,Inward Cash Allocated,Other
 ICAR,Inward Cash Allocated,Reinstatement
 ICAS,Inward Cash Allocated,Swing
+IWEO,Inward Written Earned,Other
+IWER,Inward Written Earned,Reinstatement
+IWES,Inward Written Earned,Swing
+IWEP,Inward Written Earned,Pipeline
+IWERE,Inward Written Earned,RIP Estimate
+IWP,Inward Written,Pipeline
+IWRE,Inward Written,RIP Estimate
+IAWO,Inward Accounted Written,Other
+IAWR,Inward Accounted Written,Reinstatement
+IAWS,Inward Accounted Written,Swing
+IAWP,Inward Accounted Written,Pipeline
+IAWRE,Inward Accounted Writen,RIP Estimate
