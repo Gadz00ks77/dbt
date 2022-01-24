@@ -37,25 +37,15 @@ group by
 )
 
 select distinct
-tranin._snapshot_date ,
 tranin.contract_clicode as _NK_FINAL_TRANSIN,
-null as ID,
-null as LPG_ID,
-null as EVENT_STATUS,
+tranin._snapshot_date ,
 null as EVENT_ERROR_STRING,
 null as NO_RETRIES,
 null as STAN_RULE_IDENT,
-null as SOURCE_SYS_INST_CODE,
-null as STATIC_SYS_INST_CODE,
-null as CONTRACT_SYS_INST_CODE,
-null as ACTIVE,
-null as INPUT_BY,
-null as INPUT_TIME,
 null as PROCESS_ID,
 null as SUB_SYSTEM_ID,
 null as MESSAGE_ID,
 null as REMITTING_SYSTEM_ID,
-null as ARRIVAL_TIME,
 r.policy_reference as CONTRACT_CLICODE,
 'DEFAULT' as PRODUCT_CLICODE,
 null as BO_BOOK_CLICODE,
@@ -147,7 +137,7 @@ null as FEE_PERCENT,
 null as FEE_AMOUNT
 
 from
-{{ref('output_are_contract_transaction_in')}} tranin
+{{ref('output_are_contract_transaction_in_union_presit')}} tranin
 
      join cte_snap_risks r on 
 

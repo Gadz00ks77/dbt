@@ -3,15 +3,15 @@
 with cte_1 as (
 select 'FDU' as source, *
 from 
-{{ref('output_are_contract_in')}}
--- union all 
--- select 'Pipeline' as source,*
--- from
--- {{ref('output_are_manual_contract_pipeline')}}
--- union all 
--- select 'RIPEstimates' as source, *
--- from
--- {{ref('output_are_manual_contract_ripestimates')}} 
+{{ref('output_are_contract_in_presit')}}
+union all 
+select 'Pipeline' as source,*
+from
+{{ref('output_are_manual_contract_presit_pipeline')}}
+union all 
+select 'RIPEstimates' as source, *
+from
+{{ref('output_are_manual_contract_presit_ripestimates')}} 
 ),
 pref as (
 select 'FDU' as source, 1 as pref
@@ -121,7 +121,7 @@ RETROCESSION_FLAG,
 FEE_PERCENT,
 FEE_AMOUNT,
 p.pref as Preference,
-min(p.pref) over (partition by contract_clicode order by p.pref) as BestPref
+min(p.pref) over (partition by contract_clicode,_snapshot_date order by p.pref) as BestPref
 
 from cte_1 c
 

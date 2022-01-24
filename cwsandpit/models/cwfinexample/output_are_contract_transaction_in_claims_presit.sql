@@ -136,6 +136,7 @@ from
     join {{ref('dim_transaction_events')}} te
         on te.transaction_event_key = ws.transaction_event_key
         and te.transaction_sub_event not like '%Market%'
+        and te.transaction_event in ('Inward Claims')
 
     join {{ref('dim_financial_categories')}} fc 
         on fc.financial_category_key = ws.financial_category_key
@@ -258,7 +259,6 @@ select
             ifnull(ae_dimension_11,'0')||'|'||
             ifnull(ae_dimension_13,'0')||'|'||
             ifnull(ae_dimension_14,'0')||'|'||
-            ifnull(ae_dimension_14,'0')||'|'||
             ifnull(client_text15,'0')||'|'||
             ifnull(pl_party_legal_clicode,'0')||'|'||
             ifnull(client_text10,'0')||'|'||
@@ -267,7 +267,7 @@ select
         ) over
         (
         partition by 
-          contract_clicode
+          contract_clicode||'|'||client_text7
         order by
           ae_accounting_date
 
@@ -345,7 +345,10 @@ AE_DIMENSION_1,
 substring(AE_DIMENSION_2,1,4) AE_DIMENSION_2, -- Uw Year
 AE_DIMENSION_3, -- Acc Year
 AE_DIMENSION_4, -- Mythic "COB" Nonsense
-tmm.targetmarket as AE_DIMENSION_5, -- Target Market
+case when tmm.targetmarket is null and ae_dimension_4 = 'PROP' Then 'Prop Re US Cat XL'
+when tmm.targetmarket is null and ae_dimension_4 = 'SPEC' Then 'Spec Re Other'
+else tmm.targetmarket end
+as AE_DIMENSION_5, -- Target Market
 AE_DIMENSION_6, -- Intercompany
 AE_DIMENSION_7, -- Placing Basis
 AE_DIMENSION_8, -- Contract Type
@@ -417,7 +420,7 @@ from cte_lagged l
    --left join {{ref('are_sample_cobs')}} co on            
    --   l.contract_clicode = co.eclipse_policy_reference
 
-    left join distinct_targmarkets tmm on 
+    join distinct_targmarkets tmm on 
        tmm.lineref = l.contract_clicode
 
 where (lagged_change_marker_amount != change_marker_amount or lagged_change_marker_policy_only != change_marker_policy_only)

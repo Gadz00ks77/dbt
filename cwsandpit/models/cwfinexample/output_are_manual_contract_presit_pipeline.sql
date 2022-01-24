@@ -1,73 +1,26 @@
-
-with 
-
-cte_snap_risks as (
-
-select 
-
-    ps.snapshot_date,
-    il.policy_reference,
-    ps.inception_date_key,
-    ps.expiry_date_key,
-    r.placing_basis,
-    r.period_basis,
-    prod.party_name
-
-from {{ref('fct_trans_periodic_snapshot')}} ps
-
-    join {{ref('dim_insured_line')}} il on  
-            ps.insured_line_key = il.insured_line_key
-
-    join {{ref('dim_risk')}} r on 
-            ps.risk_key = r.risk_key
-
-    join {{ref('dim_parties')}} prod on
-            prod.party_key = ps.producing_team_key
-
-group by 
-
-    ps.snapshot_date,
-    il.policy_reference,
-    ps.inception_date_key,
-    ps.expiry_date_key,
-    r.placing_basis,
-    r.period_basis,
-    prod.party_name
-
-)
-
 select distinct
-tranin._snapshot_date ,
-tranin.contract_clicode as _NK_FINAL_TRANSIN,
-null as ID,
-null as LPG_ID,
-null as EVENT_STATUS,
+
+policy_line_reference as _nk_final_transin,
+txtmonth as _snapshot_date,
 null as EVENT_ERROR_STRING,
 null as NO_RETRIES,
 null as STAN_RULE_IDENT,
-null as SOURCE_SYS_INST_CODE,
-null as STATIC_SYS_INST_CODE,
-null as CONTRACT_SYS_INST_CODE,
-null as ACTIVE,
-null as INPUT_BY,
-null as INPUT_TIME,
 null as PROCESS_ID,
 null as SUB_SYSTEM_ID,
 null as MESSAGE_ID,
 null as REMITTING_SYSTEM_ID,
-null as ARRIVAL_TIME,
-r.policy_reference as CONTRACT_CLICODE,
+policy_line_reference as CONTRACT_CLICODE,
 'DEFAULT' as PRODUCT_CLICODE,
 null as BO_BOOK_CLICODE,
 null as DESCRIPTION,
-r.policy_reference as CONTRACT_NUMBER,
+policy_line_reference as CONTRACT_NUMBER,
 null as CONTRACT_VERSION_NO,
 null as CONTRACT_VERSION_DATE,
 null as CONTRACT_STATUS,
 null as ISSUE_DATE,
 null as PAID_DATE,
-r.inception_date_key as START_DATE,
-r.expiry_date_key as END_DATE,
+txtinception as START_DATE,
+txtexpiry as END_DATE,
 null as MOVEMENT_TYPE,
 null as CH_CHANNEL_CLICODE,
 null as CU_CURRENCY_ISO_CODE,
@@ -92,10 +45,10 @@ null as PREMIUM_AMOUNT,
 null as PREMIUM_FREQUENCY_CLICODE,
 null as PREMIUM_TERM,
 null as CONTRACT_FEE,
-r.placing_basis as CLIENT_TEXT1,
+placing_basis as CLIENT_TEXT1,
 null as CLIENT_TEXT2,
-r.period_basis as CLIENT_TEXT3,
-r.party_name as CLIENT_TEXT4,
+period_basis as CLIENT_TEXT3,
+producing_team as CLIENT_TEXT4,
 null as CLIENT_TEXT5,
 null as CLIENT_TEXT6,
 null as CLIENT_TEXT7,
@@ -146,10 +99,4 @@ null as RETROCESSION_FLAG,
 null as FEE_PERCENT,
 null as FEE_AMOUNT
 
-from
-{{ref('output_are_contract_transaction_in')}} tranin
-
-     join cte_snap_risks r on 
-
-             tranin._snapshot_date = r.snapshot_date
-             and tranin.contract_clicode = r.policy_reference
+    from architecture_db.cw_are_airtable.pipeline_presit
