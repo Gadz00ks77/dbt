@@ -24,7 +24,7 @@ crosser as (
 
     select '120' as legal_entity,'CLOSING' as rtype
     --union select '120' as legal_entity,'PNL' as rtype
-    union select '130' as legal_entity,'CLOSING' as rtype
+    --union select '130' as legal_entity,'CLOSING' as rtype
     --union select '130' as legal_entity,'PNL' as rtype
 ),
 allrates as (
@@ -68,7 +68,7 @@ allrates exc
 
 )
 
-
+, cte_normal as (
 
 select 
 
@@ -94,4 +94,38 @@ from cte_entity_all_rates e
         on d.calendar_year = e.year_exchange_date
         and d.calendar_month_of_year = e.month_exchange_date
 
-        
+)
+, -- Aptitude require the inverted version of all the rates
+cte_inverted as (
+
+select 
+
+d.date                                                  as SRF_FR_FXRATE_DATE,
+SRF_FR_CU_CURRENCY_DENOM_CODE                           as SRF_FR_CU_CURRENCY_NUMER_CODE,
+d.date                                                  as SRF_FR_FXRATE_DATE_FWD,
+SRF_FR_CU_CURRENCY_NUMER_CODE                           as SRF_FR_CU_CURRENCY_DENOM_CODE,
+SRF_FR_SI_SYS_INST_CODE,
+1 / SRF_FR_FX_RATE                                      as SRF_FR_FX_RATE,
+SRF_FR_PL_PARTY_LEGAL_CODE,
+SRF_FR_SOURCE_INPUT_TIME,
+SRF_FR_RTY_RATE_TYPE_ID,
+EVENT_ERROR_STRING,
+PROCESS_ID,
+SUB_SYSTEM_ID,
+MESSAGE_ID,
+REMITTING_SYSTEM_ID,
+LPG_ID
+
+from cte_entity_all_rates e
+
+    inner join dim_dates d 
+        on d.calendar_year = e.year_exchange_date
+        and d.calendar_month_of_year = e.month_exchange_date
+
+where 
+SRF_FR_CU_CURRENCY_DENOM_CODE != SRF_FR_CU_CURRENCY_NUMER_CODE
+
+  )
+  
+  select * from cte_normal
+  union select * from cte_inverted

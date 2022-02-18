@@ -110,7 +110,7 @@ from
 {{ref('fct_trans_periodic_snapshot')}} ws
 
     join {{ref('dim_insured_line')}} il
-        on ws.insured_line_key = il.insured_line_key --and il.policy_reference = 'AF478N20A000'
+        on ws.insured_line_key = il.insured_line_key and il.policy_reference = 'AA498K19B000'
 
     join {{ref('dim_perils')}} pd  
         on ws.claim_peril_key = pd.peril_key
@@ -144,24 +144,10 @@ from
     join dim_accounting_periods ap
         on ws.accounting_period_key = ap.accounting_period_key
 
-    where 
-          upper(cob.tier_1_name) = upper('Property')
-          or upper(cob.tier_1_name) like 'ACC%'
-          or cob.tier_2_name = 'A&H'
-
-    -- where il.policy_reference in (
-    --             'DA262H21A000',
-    --             'DB174V21A000',
-    --             'AD952Z20A050',
-    --             'AA052F21B000',
-    --             'AK719Z20A001'
-    -- )
-
-    --join {{ref('are_sample')}} are_sample
-    --    on il.policy_reference = are_sample.sampleset  -- LIMITING EVERYTHING TO THE SAMPLE DEFINED BY SS. CAN BE REMOVED LATER FOR ALL POLICIES.
-
---     join {{ref('canc_sample')}} canc_sample 
---          on il.policy_reference = canc_sample.policylineref
+    -- where 
+    --       upper(cob.tier_1_name) = upper('Property')
+    --       or upper(cob.tier_1_name) like 'ACC%'
+    --       or cob.tier_2_name = 'A&H'
 
 group by 
 
@@ -196,19 +182,6 @@ group by
 
     select * 
     from cte_informat i
-
-    where i.ae_accounting_date in
-    (
-      '2021-06-01',
-      '2021-07-01',
-      '2021-08-01'
-    )
-
-    --    join {{ref('dim_date')}} ap 
-    --        on ae_accounting_date::text = ap.date::text
-    --     where 
-    --             ap.date::date =  DATE_TRUNC(month,ap.date::date)
-    --             or ap.date::date = i.first_m_date
         
 ), cte_capture_change as (
 
@@ -284,13 +257,6 @@ select
     ,i.*
 
 from cte_cadence i
-
--- where 
---         ap.day_of_month = 1 -- this is removed as I want to produce one "specific date" snapshot
---           ap.date::date =  DATE_TRUNC(quarter,ap.date::date)
---           or ap.date::date = i.first_q_date
---where ae_accounting_date = '2021-11-16'  
-
 
 order by 
         accounting_period
